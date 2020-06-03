@@ -42,7 +42,7 @@ pushd ~/dotfiles
 git submodule update --init
 popd
 # now copy over the appropriate files/plugin folders
-cp -r ~/dotfiles/oh-my-zsh ~/.oh-my-zsh
+cp -r ~/dotfiles/ohmyzsh ~/.oh-my-zsh
 cp ~/dotfiles/zshrc ~/.zshrc
 cp ~/dotfiles/startup ~/.startup
 # do clean up
