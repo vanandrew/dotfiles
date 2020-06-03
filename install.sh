@@ -29,7 +29,9 @@ if [ -f ~/.login ]; then # for csh
     # replace new login to .login
     mv ~/.login.new ~/.login
 else
-    echo "\nThis script could not find a .login/.profile to inject, you'll need to manually install the startup script manually. Ask Andrew for more details.\n"
+    echo ""
+    echo "This script could not find a .login/.profile to inject, you'll need to manually install the startup script manually. Ask Andrew for more details."
+    echo ""
 fi
 
 # change to home directory
