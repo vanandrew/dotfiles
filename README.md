@@ -15,5 +15,7 @@ Simply run the line below:
 sh -c "$(curl -fsSL https://gitlab.com/DosenbachGreene/dotfiles/-/raw/master/install.sh)"
 ```
 
+Then follow and answer the dialog questions that appear.
+
 ## Some Notes
 

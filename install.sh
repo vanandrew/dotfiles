@@ -41,6 +41,10 @@ pushd ~
 git clone https://gitlab.com/DosenbachGreene/dotfiles.git
 # clone oh-my-zsh
 git clone https://github.com/ohmyzsh/ohmyzsh.git ~/.oh-my-zsh
+# clone theme
+pushd ~/.oh-my-zsh/custom/themes
+git clone https://github.com/romkatv/powerlevel10k.git
+popd
 # now copy over the appropriate files/plugin folders
 cp -r ~/dotfiles/ohmyzsh ~/.oh-my-zsh
 cp ~/dotfiles/zshrc ~/.zshrc
