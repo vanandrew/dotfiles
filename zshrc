@@ -1,6 +1,3 @@
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-
 # Path to your oh-my-zsh installation.
 export ZSH="/home/usr/${USER}/.oh-my-zsh"
 
@@ -78,11 +75,41 @@ plugins=(
     virtualenv
 )
 
+# Call oh-my-zsh plugins
 source $ZSH/oh-my-zsh.sh
 
+# Setup Home PATH
+export USER_HOME=/home/usr/${USER}
+
+### LAB SOFTWARE PATHS ###
+
+# freesurfer / fsl
+export FREESURFER_HOME=${USER_HOME}/GMT/Andrew/freesurfer
+export SUBJECTS_DIR=${USER_HOME}/GMT/Andrew/freesurfer_outputs
+export FSLDIR=${USER_HOME}/GMT/Andrew/fsl
+export path=($path ${FSLDIR}/bin)
+source ${FSLDIR}/etc/fslconf/fsl.sh
+source ${FREESURFER_HOME}/SetUpFreeSurfer.sh > /dev/null
+
+# nil-tools
+export RELEASE=/data/nil-bluearc/raicle/lin64-tools
+export path=($path $RELEASE)
+
+# machine specific installs
+if [[ $(uname -n) == "maeve" ]]; then
+    # afni
+    export path=($path /usr/local/pkg/afni)
+elif [[ $(uname -n) == "rocinante" ]]; then
+    # afni
+    export path=($path /opt/afni)
+fi
+
+##########################
+
 # User configuration
-eval $(dircolors)
 # export MANPATH="/usr/local/man:$MANPATH"
+# add local bin to path
+export path=($path ${USER_HOME}/.local/bin)
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -93,6 +120,7 @@ eval $(dircolors)
 # else
 #   export EDITOR='mvim'
 # fi
+export EDITOR='vim'
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -105,3 +133,5 @@ eval $(dircolors)
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias ls='ls --color=auto'
+eval $(dircolors)
