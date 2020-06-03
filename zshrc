@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="~/.oh-my-zsh"
+export ZSH="/home/usr/${USER}/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -72,12 +72,17 @@ plugins=(
     git
     zsh-autosuggestions
     zsh-syntax-highlighting
+    python
+    pip
+    npm
+    virtualenv
+    virutalenvwrapper
 )
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
-
+eval $(dircolors)
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
