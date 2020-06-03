@@ -22,7 +22,6 @@ export CURRENTSHELL=${SHELL}
 
 # define csh .login modifier function
 csh_login_install() {
-  # generates a new .login file; injecting our custom startup script that we will generate soon
   echo "Making new .login file..."
   echo "#!/bin/csh" > ~/.login.new
   echo "#%^%^%^%" >> ~/.login.new
@@ -30,6 +29,19 @@ csh_login_install() {
   cat ~/.login >> ~/.login.new
   # replace new login to .login
   mv ~/.login.new ~/.login
+}
+
+# define .cshrc modifier function
+cshrc_install() {
+  echo "Making new .cshrc file..."
+  echo "#!/bin/csh" > ~/.cshrc.new
+  echo "#%^%^%^%" >> ~/.cshrc.new
+  echo "if(\$?prompt) then" >> ~/.cshrc.new
+  echo "  source ~/.dotfiles/startup.csh" >> ~/.cshrc.new
+  echo "endif" >> ~/.cshrc.new
+  cat ~/.cshrc >> ~/.cshrc.new
+  # replace new cshrc to .cshrc
+  mv ~/.cshrc.new ~/.cshrc
 }
 
 # define bash profile modifier function
@@ -43,10 +55,21 @@ bash_profile_install() {
   mv ~/.bash_profile.new ~/.bash_profile
 }
 
+# define .bashrc modifier function
+bashrc_install() {
+  echo "Making new .bashrc file..."
+  echo "#!/bin/bash" > ~/.bashrc.new
+  echo "#%^%^%^%" >> ~/.bashrc.new
+  echo "[[ \$- == *i* ]] && source ~/.dotfiles/startup.sh" >> ~/.bashrc.new
+  cat ~/.bashrc >> ~/.bashrc.new
+  # replace new bashrc to .bashrc
+  mv ~/.bashrc.new ~/.bashrc
+}
+
 # For csh install
-if [[ ${CURRENTSHELL} == "/bin/csh" || ${CURRENTSHELL} == "/bin/tcsh" ]]; then
+if [[ ${CURRENTSHELL} == "/bin/csh" || ${CURRENTSHELL} == "/bin/tcsh" || ${CURRENTSHELL} == "/usr/bin/csh" || ${CURRENTSHELL} == "/usr/bin/tcsh" ]]; then
   # copy the current login file if it exists
-  if [ -f ~/.login ]; then # for csh
+  if [ -f ~/.login ]; then
     echo "Detecting existing .login file..."
     # check if the login file has already been modified with a previous install
     if [[ $(grep \#%^%^%^% ~/.login) == "#%^%^%^%" ]]; then
@@ -64,12 +87,31 @@ if [[ ${CURRENTSHELL} == "/bin/csh" || ${CURRENTSHELL} == "/bin/tcsh" ]]; then
     # modify .login
     csh_login_install
   fi
-elif [[ ${CURRENTSHELL} == "/bin/bash" || ${CURRENTSHELL} == "/bin/sh" ]]; then # For Bash
+  # copy the current cshrc file if it exists
+  if [ -f ~/.cshrc ]; then 
+    echo "Detecting existing .cshrc file..."
+    # check if the cshrc file has already been modified with a previous install
+    if [[ $(grep \#%^%^%^% ~/.cshrc) == "#%^%^%^%" ]]; then
+      echo "This .cshrc file has already been modified. Skipping script injection..."
+    else
+      echo "Backing up old .cshrc file..."
+      # make copy of .cshrc for backup
+      cp ~/.cshrc ~/.cshrc.bak
+      # modify .cshrc
+      cshrc_install
+    fi
+  else # no current .cshrc file exists
+    # make a new .cshrc file
+    touch ~/.cshrc
+    # modify .cshrc
+    cshrc_install
+  fi
+elif [[ ${CURRENTSHELL} == "/bin/bash" || ${CURRENTSHELL} == "/bin/sh" || ${CURRENTSHELL} == "/usr/bin/bash" || ${CURRENTSHELL} == "/usr/bin/sh" ]]; then # For Bash
   # copy the current bash_profile if it exists
   if [ -f ~/.bash_profile ]; then
-  echo "Detecting existing .bash_profile..."
-  # check if the bash_profile has already been modified
-  if [[ $(grep \#%^%^%^% ~/.bash_profile) == "#%^%^%^%" ]]; then
+    echo "Detecting existing .bash_profile..."
+    # check if the bash_profile has already been modified
+    if [[ $(grep \#%^%^%^% ~/.bash_profile) == "#%^%^%^%" ]]; then
       echo "This .bash_profile file has already been modified. Skipping script injection..."
     else
       echo "Backing up old .bash_profile file..."
@@ -83,6 +125,25 @@ elif [[ ${CURRENTSHELL} == "/bin/bash" || ${CURRENTSHELL} == "/bin/sh" ]]; then 
     touch ~/.bash_profile
     # modify .bash_profile
     bash_profile_install
+  fi
+  # copy the current bashrc if it exists
+  if [ -f ~/.bashrc ]; then
+    echo "Detecting existing .bashrc..."
+    # check if the bashrc has already been modified
+    if [[ $(grep \#%^%^%^% ~/.bashrc) == "#%^%^%^%" ]]; then
+      echo "This .bashrc file has already been modified. Skipping script injection..."
+    else
+      echo "Backing up old .bashrc file..."
+      # make copy of .login for backup
+      cp ~/.bashrc ~/.bashrc.bak
+      # modify .bashrc
+      bashrc_install
+    fi
+  else # no current .bashrc exists
+    # make a new .bashrc file
+    touch ~/.bashrc
+    # modify .bash_profile
+    bashrc_install
   fi
 elif [[ ${CURRENTSHELL} == "/bin/zsh" ]]; then
   echo "Current shell is zsh. It is assumed that the appropriate login script has been modified."

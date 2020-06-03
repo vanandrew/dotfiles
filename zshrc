@@ -82,11 +82,13 @@ source $ZSH/oh-my-zsh.sh
 export USER_HOME=/home/usr/${USER}
 
 ### LAB SOFTWARE PATHS ###
+# setup GMT
+export GMT=/data/nil-bluearc/GMT
 
 # freesurfer / fsl
-export FREESURFER_HOME=${USER_HOME}/GMT/Andrew/freesurfer
-export SUBJECTS_DIR=${USER_HOME}/GMT/Andrew/freesurfer_outputs
-export FSLDIR=${USER_HOME}/GMT/Andrew/fsl
+export FREESURFER_HOME=${GMT}/Andrew/freesurfer
+export SUBJECTS_DIR=${GMT}/Andrew/freesurfer_outputs
+export FSLDIR=${GMT}/Andrew/fsl
 export path=($path ${FSLDIR}/bin)
 source ${FSLDIR}/etc/fslconf/fsl.sh
 source ${FREESURFER_HOME}/SetUpFreeSurfer.sh > /dev/null
