@@ -4,7 +4,7 @@ are mix of software from all over the different NIL systems, so it becomes reall
 figure out what versions of things folks are sometimes using.
 
 This repo contains a clone of my dotfiles (which imo is neatly organized and includes several
-useful shell features). It is meant for use specifically for our lab systems only (so `maeve` and `rocinante` only, `heisenberg` is currently not supported).
+useful shell features). It is meant for use specifically for our lab systems only (so `maeve` and `rocinante`; `heisenberg` is currently not supported).
 
 ## Installation
 
@@ -16,5 +16,7 @@ sh -c "$(curl -fsSL https://gitlab.com/DosenbachGreene/dotfiles/-/raw/master/ins
 
 Then follow and answer the dialog questions that appear.
 
-## Some Notes
+## Some Features
+
+TBD
 
