@@ -1,6 +1,5 @@
 # Andrew's Lab Dotfiles
-I made this because I've been looking at the dotfiles of other lab members and they are... a mess. Paths
-are a mix of software from all over the different NIL systems, so it becomes really difficult to
+I made this because I've been looking at the dotfiles of other lab members and they are, to put it lightly, a mess. Paths seem to be a mix of software from all over the different NIL systems, so it becomes really difficult to
 figure out what versions of things folks are using sometimes.
 
 This repo contains a copy of my dotfiles with modifications for general lab use. In addition to setting up correct paths to versions of software you should be using, it also switches your default shell to `zsh`. `zsh` allows for quite a few useful shell features that can make you more productive with your terminal!
