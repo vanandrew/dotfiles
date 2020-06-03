@@ -46,7 +46,6 @@ pushd ~/.oh-my-zsh/custom/themes
 git clone https://github.com/romkatv/powerlevel10k.git
 popd
 # now copy over the appropriate files/plugin folders
-cp -r ~/dotfiles/ohmyzsh ~/.oh-my-zsh
 cp ~/dotfiles/zshrc ~/.zshrc
 cp ~/dotfiles/startup ~/.startup
 # do clean up
