@@ -76,7 +76,7 @@ plugins=(
     pip
     npm
     virtualenv
-    virutalenvwrapper
+    virtualenvwrapper
 )
 
 source $ZSH/oh-my-zsh.sh
