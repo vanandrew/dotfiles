@@ -6,7 +6,7 @@
 set sysname = `uname -n`
 
 # setup valid systems to run this script on
-set validsystems = ("heisenberg" "maeve" "rocinante")
+set validsystems = ("maeve" "rocinante")
 
 # loop through valid systems
 foreach system ($validsystems)
