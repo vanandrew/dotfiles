@@ -37,10 +37,8 @@ echo "Adding in zsh plugins..."
 pushd ~
 # git clone the lab dotfile repo
 git clone https://gitlab.com/DosenbachGreene/dotfiles.git
-# update oh-my-zsh
-pushd ~/dotfiles
-git submodule update --init
-popd
+# clone oh-my-zsh
+git clone https://github.com/ohmyzsh/ohmyzsh.git ~/.oh-my-zsh
 # now copy over the appropriate files/plugin folders
 cp -r ~/dotfiles/ohmyzsh ~/.oh-my-zsh
 cp ~/dotfiles/zshrc ~/.zshrc
