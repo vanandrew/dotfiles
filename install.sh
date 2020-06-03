@@ -173,8 +173,8 @@ pushd ~/.oh-my-zsh/custom/plugins
 [ ! -d zsh-autosuggestions ] && git clone https://github.com/zsh-users/zsh-autosuggestions
 [ ! -d zsh-syntax-highlighting ] && git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
 popd
-# now copy over the zshrc to home if it already does not exist
-[ ! -f ~/.zshrc ] && cp ~/.dotfiles/zshrc ~/.zshrc
+# always replace the current zshrc in home
+cp ~/.dotfiles/zshrc ~/.zshrc
 popd
 
 echo ""
