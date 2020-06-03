@@ -7,7 +7,6 @@
 
 # query user input for install
 echo ""
-echo ""
 echo "######################################################"
 echo "This will setup Andrew's lab dotfile configuration."
 echo "######################################################"
@@ -16,7 +15,6 @@ if [[ $vcontinue == "Y" ]]; then
   vcontinue="y"
 fi
 [[ $vcontinue != "y" ]] && echo "Quitting... Not installed." && exit 0
-echo ""
 echo ""
 
 # Get the current shell type
@@ -38,7 +36,7 @@ csh_login_install() {
 bash_profile_install() {
   echo "Making new .bash_profile file..."
   echo "#!/bin/bash" > ~/.bash_profile.new
-  echo "##%^%^%^%" >> ~/.bash_profile.new
+  echo "#%^%^%^%" >> ~/.bash_profile.new
   echo "source ~/.dotfiles/startup.sh" >> ~/.bash_profile.new
   cat ~/.bash_profile >> ~/.bash_profile.new
   # replace new bash_profile to .bash_profile
@@ -118,5 +116,9 @@ popd
 [ ! -f ~/.zshrc ] && cp ~/.dotfiles/zshrc ~/.zshrc
 popd
 
+echo ""
+echo "######################################################"
 echo "Install Complete."
 echo "Login then logout to see the new changes."
+echo "######################################################"
+echo ""
