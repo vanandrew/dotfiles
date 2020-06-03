@@ -54,3 +54,4 @@ rm -rf ~/dotfiles
 popd
 
 echo "Install Complete."
+echo "Login then logout to see the new changes."
