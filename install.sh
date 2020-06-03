@@ -29,7 +29,7 @@ if [ -f ~/.login ]; then # for csh
     # replace new login to .login
     mv ~/.login.new ~/.login
 else
-    echo "This script could not find a .login/.profile to inject, you'll need to manually install the startup script manually. Ask Andrew for more details."
+    echo "\nThis script could not find a .login/.profile to inject, you'll need to manually install the startup script manually. Ask Andrew for more details.\n"
 fi
 
 # change to home directory
@@ -42,7 +42,7 @@ cp -r ~/dotfiles/oh-my-zsh ~/.oh-my-zsh
 cp ~/dotfiles/zshrc ~/.zshrc
 cp ~/dotfiles/startup ~/.startup
 # do clean up
-rm -r ~/dotfiles
+rm -rf ~/dotfiles
 popd
 
 echo "Install Complete."
