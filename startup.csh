@@ -11,6 +11,7 @@ set validsystems = ("maeve" "rocinante")
 # loop through valid systems
 foreach system ($validsystems)
   if ($sysname == $system) then # activate zsh if a valid system
+    setenv SHELL '/bin/zsh'
     /bin/zsh # call zsh
     exec /bin/true # force quit from calling csh for seemless shell change
   endif
