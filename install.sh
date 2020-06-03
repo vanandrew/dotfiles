@@ -39,8 +39,8 @@ pushd ~
 git clone https://gitlab.com/DosenbachGreene/dotfiles.git
 # now copy over the appropriate files/plugin folders
 cp -r ~/dotfiles/oh-my-zsh ~/.oh-my-zsh
-cp ~/zshrc ~/.zshrc
-cp ~/startup ~/.startup
+cp ~/dotfiles/zshrc ~/.zshrc
+cp ~/dotfiles/startup ~/.startup
 # do clean up
 rm -r ~/dotfiles
 popd
