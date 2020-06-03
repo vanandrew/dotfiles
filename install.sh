@@ -58,9 +58,9 @@ if [[ ${CURRENTSHELL} == "/bin/csh" || ${CURRENTSHELL} == "/bin/tcsh" ]]; then
     csh_login_install
   fi
 elif [[ ${CURRENTSHELL} == "/bin/bash" || ${CURRENTSHELL} == "/bin/sh" ]]; then # For Bash
-
+  echo "test"
 elif [[ ${CURRENTSHELL} == "/bin/zsh" ]]; then
-
+  echo "test"
 else # Other shells
   echo "Unknown shell detected. Quitting installation..."
 fi
