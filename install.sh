@@ -32,6 +32,7 @@ csh_login_install() {
 
 # define bash profile modifier function
 bash_profile_install() {
+  echo "hello"
 }
 
 # For csh install
