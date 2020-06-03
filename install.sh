@@ -45,6 +45,11 @@ git clone https://github.com/ohmyzsh/ohmyzsh.git ~/.oh-my-zsh
 pushd ~/.oh-my-zsh/custom/themes
 git clone https://github.com/romkatv/powerlevel10k.git
 popd
+# clone plugins
+pushd ~/.oh-my-zsh/custom/plugins
+git clone https://github.com/zsh-users/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
+popd
 # now copy over the appropriate files/plugin folders
 cp ~/dotfiles/zshrc ~/.zshrc
 cp ~/dotfiles/startup ~/.startup
