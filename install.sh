@@ -170,11 +170,13 @@ pushd ~/.oh-my-zsh/custom/themes
 popd
 # clone plugins
 pushd ~/.oh-my-zsh/custom/plugins
-[ ! -d zsh-autosuggestions ] && git clone https://github.com/zsh-users/zsh-autosuggestions
+[ ! -d zsh-autosuggestions ] && git clone https://github.com/zsh-users/zsh-autosuggestions.git
 [ ! -d zsh-syntax-highlighting ] && git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
 popd
 # always replace the current zshrc in home
 cp ~/.dotfiles/zshrc ~/.zshrc
+# add paths_user file if not exist
+[ -f ~/.paths_user ] && cp ~/.dotfiles/paths_user ~/.paths_user
 popd
 
 echo ""
