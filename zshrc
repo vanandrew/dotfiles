@@ -82,7 +82,7 @@ source $ZSH/oh-my-zsh.sh
 export USER_HOME=/home/usr/${USER}
 
 # Call default lab paths
-source ${USER_HOME}/.dotfiles/path_defaults
+source ${USER_HOME}/.dotfiles/paths_default
 
 # Call user path configuration if it exists
 [ -f ${USER_HOME}/.paths_user ] && source ${USER_HOME}/.paths_user 
@@ -118,3 +118,6 @@ export EDITOR='vim'
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias ls='ls --color=auto'
 eval $(dircolors)
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
