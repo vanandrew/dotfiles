@@ -23,9 +23,13 @@ export path=($path /data/nil-bluearc/raichle/lin64-tools)
 # execute based on machine name
 case $(uname -n) in
   maeve)
+    # gcc8 tools
+    source /opt/rh/devtoolset-8/enable 
+    # afni
     export path=($path /usr/local/pkg/afni)
   ;;
   rocinante)
+    # afni
     export path=($path /opt/afni)
   ;;
 esac
