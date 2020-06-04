@@ -82,7 +82,7 @@ source $ZSH/oh-my-zsh.sh
 export USER_HOME=/home/usr/${USER}
 
 # Call default lab paths
-source ${USER_HOME}/.paths_default
+source ${USER_HOME}/.dotfiles/path_defaults
 
 # Call user path configuration if it exists
 [ -f ${USER_HOME}/.paths_user ] && source ${USER_HOME}/.paths_user 

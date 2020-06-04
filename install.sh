@@ -175,8 +175,6 @@ pushd ~/.oh-my-zsh/custom/plugins
 popd
 # always replace the current zshrc in home
 cp ~/.dotfiles/zshrc ~/.zshrc
-# copy default_paths
-cp ~/.dotfiles/paths_default ~/.paths_default
 popd
 
 echo ""
