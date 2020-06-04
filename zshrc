@@ -78,33 +78,14 @@ plugins=(
 # Call oh-my-zsh plugins
 source $ZSH/oh-my-zsh.sh
 
-# Setup Home PATH
+# Setup the current user home path
 export USER_HOME=/home/usr/${USER}
 
-### LAB SOFTWARE PATHS ###
-# setup GMT
-export GMT=/data/nil-bluearc/GMT
+# Call default lab paths
+source ${USER_HOME}/.paths_default
 
-# freesurfer / fsl
-export FREESURFER_HOME=${GMT}/Andrew/freesurfer
-export SUBJECTS_DIR=${GMT}/Andrew/freesurfer_outputs
-export FSLDIR=${GMT}/Andrew/fsl
-export path=($path ${FSLDIR}/bin)
-source ${FSLDIR}/etc/fslconf/fsl.sh
-source ${FREESURFER_HOME}/SetUpFreeSurfer.sh > /dev/null
-
-# nil-tools
-export RELEASE=/data/nil-bluearc/raicle/lin64-tools
-export path=($path $RELEASE)
-
-# machine specific installs
-if [[ $(uname -n) == "maeve" ]]; then
-    # afni
-    export path=($path /usr/local/pkg/afni)
-elif [[ $(uname -n) == "rocinante" ]]; then
-    # afni
-    export path=($path /opt/afni)
-fi
+# Call user path configuration if it exists
+[ -f ${USER_HOME}/.paths_user ] && source ${USER_HOME}/.paths_user 
 
 ##########################
 
@@ -114,7 +95,7 @@ fi
 export path=($path ${USER_HOME}/.local/bin)
 
 # You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then

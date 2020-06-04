@@ -1,0 +1,31 @@
+# This file should automatically be sourced by .zshrc
+# DO NOT MODIFY THIS FILE! IF YOU NEED TO ADD A CUSTOM PATH
+# create a .paths_user file in your home directory and 
+# add your custom stuff there!
+
+### GLOBAL PATHS AND VARIABLES FOR ALL SYSTEMS ###
+
+# setup GMT
+export GMT=/data/nil-bluearc/GMT
+
+# freesurfer / fsl
+export FREESURFER_HOME=${GMT}/Andrew/freesurfer
+export SUBJECTS_DIR=${GMT}/Andrew/freesurfer_outputs
+export FSLDIR=${GMT}/Andrew/fsl
+source ${FSLDIR}/etc/fslconf/fsl.sh
+source ${FREESURFER_HOME}/SetUpFreeSurfer.sh > /dev/null
+
+# nil-tools #TODO: Maybe swap to own build
+export path=($path /data/nil-bluearc/raichle/lin64-tools)
+
+### MACHINE-SPECIFIC PATHS AND VARIABLES ###
+
+# execute based on machine name
+case $(uname -n) in
+  maeve)
+    export path=($path /usr/local/pkg/afni)
+  ;;
+  rocinante)
+    export path=($path /opt/afni)
+  ;;
+esac
