@@ -166,12 +166,15 @@ fi
 [ ! -d ~/.oh-my-zsh ] && git clone https://github.com/ohmyzsh/ohmyzsh.git ~/.oh-my-zsh
 # clone theme
 pushd ~/.oh-my-zsh/custom/themes
-[ ! -d ./powerlevel10k ] && git clone https://github.com/romkatv/powerlevel10k.git && git checkout v1.11.0
+[ ! -d ./powerlevel10k ] && git clone https://github.com/romkatv/powerlevel10k.git
+git checkout v1.11.0
 popd
 # clone plugins
 pushd ~/.oh-my-zsh/custom/plugins
-[ ! -d zsh-autosuggestions ] && git clone https://github.com/zsh-users/zsh-autosuggestions.git && git checkout v0.6.4
-[ ! -d zsh-syntax-highlighting ] && git clone https://github.com/zsh-users/zsh-syntax-highlighting.git && git checkout v0.7.1
+[ ! -d zsh-autosuggestions ] && git clone https://github.com/zsh-users/zsh-autosuggestions.git
+git checkout v0.6.4
+[ ! -d zsh-syntax-highlighting ] && git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
+git checkout v0.7.1
 popd
 # always replace the current zshrc in home
 cp ~/.dotfiles/zshrc ~/.zshrc
