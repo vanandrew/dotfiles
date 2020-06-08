@@ -170,8 +170,8 @@ pushd ~/.oh-my-zsh/custom/themes
 popd
 # clone plugins
 pushd ~/.oh-my-zsh/custom/plugins
-[ ! -d zsh-autosuggestions ] && git clone https://github.com/zsh-users/zsh-autosuggestions.git
-[ ! -d zsh-syntax-highlighting ] && git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
+[ ! -d zsh-autosuggestions ] && git clone https://github.com/zsh-users/zsh-autosuggestions.git && git checkout v0.6.4
+[ ! -d zsh-syntax-highlighting ] && git clone https://github.com/zsh-users/zsh-syntax-highlighting.git && git checkout v0.7.1
 popd
 # always replace the current zshrc in home
 cp ~/.dotfiles/zshrc ~/.zshrc
