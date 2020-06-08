@@ -166,7 +166,7 @@ fi
 [ ! -d ~/.oh-my-zsh ] && git clone https://github.com/ohmyzsh/ohmyzsh.git ~/.oh-my-zsh
 # clone theme
 pushd ~/.oh-my-zsh/custom/themes
-[ ! -d ./powerlevel10k ] && git clone https://github.com/romkatv/powerlevel10k.git
+[ ! -d ./powerlevel10k ] && git clone https://github.com/romkatv/powerlevel10k.git && git checkout v1.11.0
 popd
 # clone plugins
 pushd ~/.oh-my-zsh/custom/plugins
