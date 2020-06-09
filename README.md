@@ -1,10 +1,4 @@
 # Andrew's Lab Dotfiles
-I made this because I've been looking at the dotfiles of other lab members and 
-they are, to put it mildly, a mess. Paths seem to be a mix of software from all 
-over the different NIL systems, so it becomes really difficult to figure out what
-versions of things folks are using sometimes. Additionally, most of the default
-prompts that people use tend to not be very descriptive or helpful.
-
 This repo contains a copy of my own dotfiles with paths and settings that I find to be quite useful. It has been slightly modified for general lab use. In addition to setting up correct paths to versions of software you should be using, it also switches your default shell to `zsh` with a bunch of extra plugins. `zsh` + the plugins allow for several useful shell features that can make you more productive with your terminal!
 
 ![crappy](imgs/crappy.png "Old Configs")
