@@ -67,12 +67,8 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
     git
+    zsh-syntax-highlighting 
     zsh-autosuggestions
-    zsh-syntax-highlighting
-    python
-    pip
-    npm
-    virtualenv
 )
 
 # Call oh-my-zsh plugins
@@ -95,7 +91,7 @@ source ${USER_HOME}/.dotfiles/paths_default
 export path=($path ${USER_HOME}/.local/bin)
 
 # You may need to manually set your language environment
-export LANG=en_US.UTF-8
+# export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
