@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # Path to your oh-my-zsh installation.
 export ZSH="/home/usr/${USER}/.oh-my-zsh"
 
@@ -47,7 +54,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
 # much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
+DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
@@ -67,9 +74,16 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
     git
-    zsh-syntax-highlighting 
     zsh-autosuggestions
+    zsh-syntax-highlighting
 )
+
+# Enable autosuggestion async mode
+export ZSH_AUTOSUGGEST_USE_ASYNC=1
+
+# Set directory coloring
+alias ls='ls --color=auto'
+eval $(dircolors)
 
 # Call oh-my-zsh plugins
 source $ZSH/oh-my-zsh.sh
@@ -81,7 +95,7 @@ export USER_HOME=/home/usr/${USER}
 source ${USER_HOME}/.dotfiles/paths_default
 
 # Call user path configuration if it exists
-[ -f ${USER_HOME}/.paths_user ] && source ${USER_HOME}/.paths_user 
+[ -f ${USER_HOME}/.paths_user ] && source ${USER_HOME}/.paths_user
 
 ##########################
 
@@ -112,8 +126,6 @@ export EDITOR='vim'
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias ls='ls --color=auto'
-eval $(dircolors)
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
