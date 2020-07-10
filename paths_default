@@ -9,17 +9,20 @@
 export GMT=/data/nil-bluearc/GMT
 
 # freesurfer / fsl
-export FREESURFER_HOME=${GMT}/Andrew/freesurfer
-export SUBJECTS_DIR=${GMT}/Andrew/freesurfer_outputs
-export FSLDIR=${GMT}/Andrew/fsl
+export FREESURFER_HOME=/opt/freesurfer
+export SUBJECTS_DIR=${GMT}/${USER}/subjects_dir
+export FSLDIR=/opt/fsl
 source ${FSLDIR}/etc/fslconf/fsl.sh
 source ${FREESURFER_HOME}/SetUpFreeSurfer.sh > /dev/null
 
-# nil-tools #TODO: Maybe swap to own build
-export path=($path /data/nil-bluearc/raichle/lin64-tools)
+# ants
+export path=($path /opt/ants/install/bin)
 
-# add workbench
-export path=($path /data/heisenberg/data1/mario/wb_dir/workbench/bin_rh_linux64/)
+# 4dfp tools
+export NILSRC=/opt/4dfp_tools/NILSRC
+export RELEASE=/opt/4dfp_tools/RELEASE
+export REFDIR=${GMT}/refdir
+export path=($path $RELEASE)
 
 ### MACHINE-SPECIFIC PATHS AND VARIABLES ###
 
@@ -28,11 +31,18 @@ case $(uname -n) in
   maeve)
     # gcc8 tools
     source /opt/rh/devtoolset-8/enable 
+    
     # afni
     export path=($path /usr/local/pkg/afni)
+
+    # add workbench
+    export path=($path /opt/workbench/bin_rh_linux64)
   ;;
   rocinante)
     # afni
     export path=($path /opt/afni)
+    
+    # add workbench
+    export path=($path /opt/workbench/bin_linux64)
   ;;
 esac
