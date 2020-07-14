@@ -26,11 +26,20 @@ export ZSH_AUTOSUGGEST_USE_ASYNC=1
 # Uncomment the following line to change how often to auto-update the dotfiles (in days).
 # export UPDATE_DOTFILES_DAYS=13
 
+# set editor
+export EDITOR=vim
+
 # enable gcc-8 toolchain
 # if [[ "$(uname -n)" == "maeve" ]]; then
-#   source /opt/rh/devtoolset-8/enable 
+#     source /opt/rh/devtoolset-8/enable 
 # fi
 
-# enable lsd (ls with icons, written in rust)
+# set directory coloring
+eval $(dircolors)
+
+# use color ls  
+alias ls='ls --color=auto'
+# or
+# use lsd (ls with icons, written in rust)
 # export path=($path /opt/rust/cargo/bin)
 # alias ls='lsd'
