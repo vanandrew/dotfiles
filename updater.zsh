@@ -40,10 +40,15 @@ function update_last_updated_file() {
         return
     fi
 
-    # pull the dotfiles repo and install
+    # check the dotfiles repo and offer update
     pushd ${HOME}/.dotfiles > /dev/null
     git fetch
-        #./install.sh
+    if [[ $(git rev-parse HEAD) == $(git rev-parse @{u}) ]]; then
+        git pull
+        echo "An update for your dotfiles is availiable. You may update it by inputting 'y'"
+        echo "below, or type 'N' and run '~/.dotfiles/install.sh' at a later time."
+        ./install.sh
+    fi
     popd > /dev/null
 
     # update the update file
