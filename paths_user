@@ -1,5 +1,7 @@
 # This file is for adding your own custom paths/aliases/variable
 # it will automatically be sourced when zsh starts
+# 
+# This is a zsh sourced file, so environment variables accept any zsh valid format
 
 # Uncomment the following line to disable bi-weekly auto-update checks for dotfiles
 # DISABLE_DOTFILES_AUTO_UPDATE="true"
