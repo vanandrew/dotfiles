@@ -60,9 +60,6 @@ DISABLE_UPDATE_PROMPT="true"
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
-# Enable autosuggestion async mode
-export ZSH_AUTOSUGGEST_USE_ASYNC=1
-
 # Set directory coloring
 alias ls='ls --color=auto'
 eval $(dircolors)
