@@ -32,7 +32,7 @@ export path=($path $RELEASE)
 case $(uname -n) in
   maeve)
     # gcc8 tools
-    source /opt/rh/devtoolset-8/enable 
+    #source /opt/rh/devtoolset-8/enable 
     
     # afni
     export path=($path /usr/local/pkg/afni)
