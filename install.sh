@@ -184,7 +184,7 @@ popd
 # always replace the current zshrc in home
 cp ~/.dotfiles/zshrc ~/.zshrc
 # add paths_user file if not exist
-[ -f ~/.paths_user ] && cp ~/.dotfiles/paths_user ~/.paths_user
+[ ! -f ~/.paths_user ] && cp ~/.dotfiles/paths_user ~/.paths_user
 popd
 
 echo ""
