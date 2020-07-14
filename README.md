@@ -38,6 +38,7 @@ This will return backed up configs to their original state and remove any instal
 - Default shell changed to zsh, with the [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh) plugin manager installed.
 - Terminal Theming (Default is set to [powerlevel10k](https://github.com/romkatv/powerlevel10k))
 - [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions) and [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting) installed by default.
+- Auto-updater for keeping all your paths up-to-date with the rest of the lab.
 
 ## FAQ
 
