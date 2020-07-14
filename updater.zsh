@@ -47,10 +47,19 @@ function update_last_updated_file() {
     if [[ "$(git rev-parse HEAD)" != "$(git rev-parse @{u})" ]]; then
         git reset --hard && git pull
         echo ""
-        echo "An update for your dotfiles is availiable. You may update it by inputting 'y'"
-        echo "below, or type 'N' and run '~/.dotfiles/install.sh' at a later time."
-        ./install.sh
+        echo "Executing Update..."
+        yes | ./install.sh
+        echo ""
+        echo "Update Complete!"
+        echo ""
+        echo "Update Note: This updater does not currently auto-update your .zshrc and .paths_user files if they"
+        echo "already exist in your home directory. You may want to check the differences between the"
+        echo "versions by using 'diff .zshrc ~/.dotfiles/zshrc' and 'diff .paths_user ~/.dotfiles/paths_user'"
+        echo "and change you files accordingly. Another update will fix this issue in the near-future."
+        echo ""
+        echo "If you do not know what any of the above means, you can safely ignore the above message."
     else
+        echo ""
         echo "No updates found."
     fi
     popd > /dev/null

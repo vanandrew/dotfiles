@@ -181,8 +181,8 @@ cd zsh-syntax-highlighting
 git checkout 0.7.1
 cd ..
 popd
-# always replace the current zshrc in home
-cp ~/.dotfiles/zshrc ~/.zshrc
+# the current zshrc in home if not exist
+[ ! -f ~/.zshrc ] && cp ~/.dotfiles/zshrc ~/.zshrc
 # add paths_user file if not exist
 [ ! -f ~/.paths_user ] && cp ~/.dotfiles/paths_user ~/.paths_user
 popd
