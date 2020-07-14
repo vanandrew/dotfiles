@@ -41,6 +41,7 @@ function update_last_updated_file() {
     fi
 
     # check the dotfiles repo and offer update
+    echo "Checking for updates..."
     pushd ${HOME}/.dotfiles > /dev/null
     git fetch
     if [[ "$(git rev-parse HEAD)" != "$(git rev-parse @{u})" ]]; then
@@ -49,6 +50,8 @@ function update_last_updated_file() {
         echo "An update for your dotfiles is availiable. You may update it by inputting 'y'"
         echo "below, or type 'N' and run '~/.dotfiles/install.sh' at a later time."
         ./install.sh
+    else
+        echo "No updates found."
     fi
     popd > /dev/null
 
