@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH="/home/usr/${USER}/.oh-my-zsh"
+export ZSH="${HOME}/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -81,21 +81,18 @@ eval $(dircolors)
 # Call oh-my-zsh plugins
 source $ZSH/oh-my-zsh.sh
 
-# Setup the current user home path
-export USER_HOME=/home/usr/${USER}
-
 # Call default lab paths
-source ${USER_HOME}/.dotfiles/paths_default
+source ${HOME}/.dotfiles/paths_default
 
 # Call user path configuration if it exists
-[ -f ${USER_HOME}/.paths_user ] && source ${USER_HOME}/.paths_user
+[ -f ${HOME}/.paths_user ] && source ${HOME}/.paths_user
 
 ##########################
 
 # User configuration
 # export MANPATH="/usr/local/man:$MANPATH"
 # add local bin to path
-export path=($path ${USER_HOME}/.local/bin)
+export path=($path ${HOME}/.local/bin)
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8

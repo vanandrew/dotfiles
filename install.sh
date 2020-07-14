@@ -88,7 +88,7 @@ if [[ ${CURRENTSHELL} == "/bin/csh" || ${CURRENTSHELL} == "/bin/tcsh" || ${CURRE
     csh_login_install
   fi
   # copy the current cshrc file if it exists
-  if [ -f ~/.cshrc ]; then 
+  if [ -f ~/.cshrc ]; then
     echo "Detecting existing .cshrc file..."
     # check if the cshrc file has already been modified with a previous install
     if [[ $(grep \#%^%^%^% ~/.cshrc) == "#%^%^%^%" ]]; then
