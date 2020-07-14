@@ -60,10 +60,6 @@ DISABLE_UPDATE_PROMPT="true"
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
-# Set directory coloring
-alias ls='ls --color=auto'
-eval $(dircolors)
-
 # add local bin to path
 export path=($path ${HOME}/.local/bin)
 
