@@ -3,6 +3,20 @@
 # 
 # This is a zsh sourced file, so environment variables accept any zsh valid format
 
+# Which plugins would you like to load?
+# Standard plugins can be found in $ZSH/plugins/
+# Custom plugins may be added to $ZSH_CUSTOM/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(
+    git
+    zsh-autosuggestions
+)
+# Add the line below into the plugins list above for syntax highlighting
+# It has been disabled by default for performance issues in some setups
+#
+# zsh-syntax-highlighting
+
 # Uncomment the following line to disable bi-weekly auto-update checks for dotfiles
 # DISABLE_DOTFILES_AUTO_UPDATE="true"
  
