@@ -8,3 +8,12 @@
  
 # Uncomment the following line to change how often to auto-update the dotfiles (in days).
 # export UPDATE_DOTFILES_DAYS=13
+
+# enable gcc-8 toolchain
+# if [[ "$(uname -n)" == "maeve" ]]; then
+#   source /opt/rh/devtoolset-8/enable 
+# fi
+
+# enable lsd (ls with icons, written in rust)
+# export path=($path /opt/rust/cargo/bin)
+# alias ls='lsd'
