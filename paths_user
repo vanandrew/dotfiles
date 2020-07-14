@@ -3,9 +3,6 @@
 # 
 # This is a zsh sourced file, so environment variables accept any zsh valid format
 
-# Enable autosuggestion async mode
-export ZSH_AUTOSUGGEST_USE_ASYNC=1
-
 # Uncomment the following line to disable bi-weekly auto-update checks for dotfiles
 # DISABLE_DOTFILES_AUTO_UPDATE="true"
  
@@ -19,9 +16,6 @@ export EDITOR='vim'
 # if [[ "$(uname -n)" == "maeve" ]]; then
 #     source /opt/rh/devtoolset-8/enable 
 #fi
-
-# set directory coloring
-eval $(dircolors)
 
 # use color ls  
 alias ls='ls --color=auto'
