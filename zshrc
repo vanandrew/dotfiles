@@ -87,6 +87,9 @@ source ${HOME}/.dotfiles/paths_default
 # Call user path configuration if it exists
 [ -f ${HOME}/.paths_user ] && source ${HOME}/.paths_user
 
+# Call the dotfiles update
+source ${HOME}/.dotfiles/updater.zsh
+
 ##########################
 
 # User configuration
