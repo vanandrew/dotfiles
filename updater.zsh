@@ -59,7 +59,6 @@ function update_last_updated_file() {
         echo ""
         echo "If you do not know what any of the above means, you can safely ignore the above message."
     else
-        echo ""
         echo "No updates found."
     fi
     popd > /dev/null
