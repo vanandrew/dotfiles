@@ -17,7 +17,7 @@ These dotfiles are specifically meant for use with our lab systems only (so `mae
 
 ## Installation
 
-Simply run the line below:
+Simply run the line below on either `maeve` or `rocinante`:
 
 ```
 sh -c "$(curl -fsSL https://gitlab.com/DosenbachGreene/dotfiles/-/raw/master/install.sh)"
