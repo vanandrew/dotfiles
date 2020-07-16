@@ -203,6 +203,6 @@ popd
 echo ""
 echo "######################################################"
 echo "Install Complete."
-echo "Login then logout to see the new changes."
+echo "Logout then login to see the new changes."
 echo "######################################################"
 echo ""
