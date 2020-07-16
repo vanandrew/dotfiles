@@ -8,8 +8,21 @@
 # query user input for install
 echo ""
 echo "######################################################"
+echo ""
+echo "          _---~~(~~-_."
+echo "        _{        )   )"
+echo "      ,   ) -~~- ( ,-' )_         Andrew's"
+echo "     (  \`-,_..\`., )-- '_,)        Dotfiles"
+echo "    ( \` _)  (  -~( -_ \`,  }"
+echo "    (_-  _  ~_-~~~~\`,  ,' )"
+echo "      \`~ -^(    __;-,((()))"
+echo "            ~~~~ {_ -_(())"
+echo ""
 echo "This will setup Andrew's lab dotfile configuration."
+echo "This installer should be run ONLY on maeve or rocinante."
+echo "No other systems are currently supported."
 echo "######################################################"
+echo ""
 read -p "Continue? [y/N]: " vcontinue
 if [[ $vcontinue == "Y" ]]; then
   vcontinue="y"
