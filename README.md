@@ -33,8 +33,13 @@ This will return backed up configs to their original state and remove any instal
 
 ## Features
 
-- Paths to common lab software at appropriate paths
-- Clear location to add custom paths variables; Simply use the `~/.paths_user` file and script away!
+- Paths to up-to-date common lab software
+    - 4dfp (latest)
+    - FSL (6.0.3)
+    - AFNI (20.0.18)
+    - Freesurfer (6.0.0)
+    - Connectome Workbench (1.4.2)
+- Clear location for user config; Simply use the `~/.paths_user` file and script away!
 - Default shell changed to zsh, with the [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh) plugin manager installed.
 - Terminal Theming (Default is set to [powerlevel10k](https://github.com/romkatv/powerlevel10k))
 - [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions) and [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting) installed by default.
@@ -45,7 +50,8 @@ This will return backed up configs to their original state and remove any instal
 ### How do I get the fancy icons like in your screenshot?
 You'll need patched fonts, which you can grab from [here](https://www.nerdfonts.com/). If you are using `vnc`, patched fonts should already be installed on our servers (Look for `SauceCodePro Nerd Font`). 
 
-### My shell is too slow/unresponsive
-This generally occurs if you have stuff on you `PATH` located on a network drive. Some of the plugins do searches on the `PATH`, which can cause a slow down since it'll be searching on a network drive. To avoid this performance hit, it's generally best to keep network paths off your `PATH`.
+### I don't see syntax highlighting on my shell!
+It is disabled by default for performance reasons (Particularly if you spend most of your time on networked drives).
 
-Alternatively, you can try disabling the `zsh-syntax-highlighting` plugin in the `.zshrc` in your home directory (which seems to be the main culprit in most slow downs). You can do this by deleting the `zsh-syntax-highlighting` entry from the `plugins` array. This will disable syntax coloring, but most likely improve performance dramatically.
+To enable it, add the `zsh-syntax-highlighting` line to your `plugins` array in
+your `~/.zshrc` file.
