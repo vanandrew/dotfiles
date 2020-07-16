@@ -1,14 +1,17 @@
 # Andrew's Lab Dotfiles
 This repo contains a copy of my own dotfiles with paths and settings that I find to be quite useful. It has been slightly modified for general lab use. In addition to setting up correct paths to versions of software you should be using, it also switches your default shell to `zsh` with a bunch of extra plugins. `zsh` + the plugins allow for several useful shell features that can make you more productive with your terminal!
 
-![crappy](imgs/crappy.png "Old Configs")
 *Without Andrew's Dotfiles*
 
-![cool](imgs/cool.png "New Configs")
+![crappy](imgs/crappy.png "Old Configs")
+
 *With Andrew's Dotfiles*
 
-![demo](imgs/demo.gif "Demo")
+![cool](imgs/cool.png "New Configs")
+
 *Demo*
+
+![demo](imgs/demo.gif "Demo")
 
 These dotfiles are specifically meant for use with our lab systems only (so `maeve` and `rocinante`; `heisenberg` is currently not supported). When logging into other NIL systems, the scripts do not to activate, allowing you to continue to use older lab dotfile configurations without issue.
 
@@ -50,6 +53,13 @@ This will return backed up configs to their original state and remove any instal
 - Auto-updater for keeping all your paths up-to-date with the rest of the lab.
 
 ## FAQ
+
+### What does the install script do to my setup?
+The install script identifies your current shell through the `$SHELL` variable to install the appropriate startup file. Currently, the only shells supported are `csh`, `bash` and `zsh`.
+A call to the startup file is placed at the very top of your current shell's profile/rc files. This startup file only runs when you are on a supported system (`maeve` and `rocinante` 
+at the moment). If you're already on `zsh` all of these steps are skipped.
+
+From there, `zsh` is executed, which calls `~/.zshrc`. Then lab wide software paths are setup (`path_default` file) as well as your own user config file (`~/.paths_user`).
 
 ### How do I get the fancy icons like in your screenshot?
 You'll need patched fonts, which you can grab from [here](https://www.nerdfonts.com/). If you are using `vnc`, patched fonts should already be installed on our servers (Look for `SauceCodePro Nerd Font`). 
