@@ -12,10 +12,15 @@
 # set editor
 export EDITOR='vim'
 
-# enable gcc-8 toolchain
+# enable gcc-8 toolchain for maeve
 # if [[ "$(uname -n)" == "maeve" ]]; then
 #     source /opt/rh/devtoolset-8/enable 
-#fi
+# fi
+
+# set hdf5 library for rocinante
+# if [[ "$(uname -n)" == "rocinante" ]]; then
+#     export CPLUS_INCLUDE_PATH=${CPLUS_INCLUDE_PATH:+${CPLUS_INCLUDE_PATH}:}/usr/include/hdf5/serial
+# fi
 
 # use color ls  
 alias ls='ls --color=auto'
