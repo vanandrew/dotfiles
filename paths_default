@@ -6,7 +6,7 @@
 ### GLOBAL PATHS AND VARIABLES FOR ALL SYSTEMS ###
 
 # add local bin to path
-export path=($path ${HOME}/.local/bin)
+export path=(${HOME}/.local/bin $path)
 
 # setup GMT
 export GMT=/data/nil-bluearc/GMT
