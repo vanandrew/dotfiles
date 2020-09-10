@@ -17,10 +17,15 @@ These dotfiles are specifically meant for use with our lab systems only (so `mae
 
 ## Installation
 
-Simply run the line below on either `maeve` or `rocinante`:
+Simply run the line below on either `maeve` or `rocinante` (NOTE: The installer identifies your current shell using the $SHELL variable. If you've modified it the installer
+may not install the correct startup script for your current shell.):
 
 ```
+# bash
 sh -c "$(curl -fsSL https://gitlab.com/DosenbachGreene/dotfiles/-/raw/master/install.sh)"
+
+# csh
+pushd ~ && curl -O https://gitlab.com/DosenbachGreene/dotfiles/-/raw/master/install.sh && chmod +x install.sh && ./install.sh && rm install.sh && popd
 ```
 
 This will inject the startup script into the appropriate dotfiles based on your current active shell.
