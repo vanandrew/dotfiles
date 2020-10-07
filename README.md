@@ -57,6 +57,24 @@ This will return backed up configs to their original state and remove any instal
 - [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions) and [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting) installed by default.
 - Auto-updater for keeping all your paths up-to-date with the rest of the lab.
 
+**Software you need not available here? Let me know on Slack!**
+
+## Defining custom environment variables/paths
+
+User specific paths/environment variables can be defined in your `~/.paths_user` file. This file is automatically sourced on startup of `zsh`. The file accepts any valid `zsh` syntax (backwards compatible with `bash`). Some Examples:
+
+```
+# In file ~/.paths_user
+
+# Define a custom environment variable
+export MY_CUSTOM_VARIABLE="This is a custom variable!"
+
+# Add custom paths to $PATH variable
+export path=($path /some/location/to/custom/pkg/)
+```
+
+A useful [reference guide for zsh syntax](http://www.bash2zsh.com/zsh_refcard/refcard.pdf).
+
 ## FAQ
 
 ### What does the install script do to my setup?
@@ -81,3 +99,6 @@ your `~/.zshrc` file.
 It is a feature of the `powerlevel10k` theme. It allows you to start typing commands into your terminal before all the `zsh` plugins finish loading.
 
 If you are using the default configuration, it's recommended that you leave it off. It is only useful if you have a bunch of plugins loaded (see the `plugins` array in `~/.zshrc`)
+
+### How do I change my answers to those startup questions?
+The command is `p10k configure` to rerun the [powerlevel10k](https://github.com/romkatv/powerlevel10k) theme startup prompt.
