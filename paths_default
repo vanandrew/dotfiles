@@ -45,6 +45,10 @@ case $(uname -n) in
 
     # add workbench
     export path=($path /opt/workbench/bin_rh_linux64)
+
+    # add msm
+    export MSMBINDIR=/opt/msm/Ubuntu
+    export path=($path /opt/msm/Ubuntu)
   ;;
   rocinante)
     # afni
@@ -52,5 +56,9 @@ case $(uname -n) in
     
     # add workbench
     export path=($path /opt/workbench/bin_linux64)
+
+    # add msm
+    export MSMBINDIR=/opt/msm/Centos
+    export path=($path /opt/msm/Centos)
   ;;
 esac
