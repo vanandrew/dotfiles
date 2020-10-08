@@ -29,6 +29,9 @@ export RELEASE=/opt/4dfp_tools/RELEASE
 export REFDIR=${GMT}/refdir
 export path=($path $RELEASE)
 
+# c3d
+export path=($path /opt/c3d/c3d-1.0.0-Linux-x86_64/bin)
+
 ### MACHINE-SPECIFIC PATHS AND VARIABLES ###
 
 # execute based on machine name
