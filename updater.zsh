@@ -55,7 +55,7 @@ function update_last_updated_file() {
         echo "Update Note: This updater does not currently auto-update your .zshrc and .paths_user files if they"
         echo "already exist in your home directory. You may want to check the differences between the"
         echo "versions by using 'diff .zshrc ~/.dotfiles/zshrc' and 'diff .paths_user ~/.dotfiles/paths_user'"
-        echo "and change your files accordingly. Another update will fix this issue in the near-future."
+        echo "and change your files accordingly."
         echo ""
         echo "If you do not know what any of the above means, you can safely ignore the above message."
     else
