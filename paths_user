@@ -12,12 +12,12 @@
 # set editor
 export EDITOR='vim'
 
-# enable gcc-8 toolchain for maeve
+# enable gcc-8 toolchain for Centos Systems (maeve as example)
 # if [[ "$(uname -n)" == "maeve" ]]; then
 #     source /opt/rh/devtoolset-8/enable 
 # fi
 
-# set hdf5 library for rocinante
+# set hdf5 library at another location (rocinante as example)
 # if [[ "$(uname -n)" == "rocinante" ]]; then
 #     export CPLUS_INCLUDE_PATH=${CPLUS_INCLUDE_PATH:+${CPLUS_INCLUDE_PATH}:}/usr/include/hdf5/serial
 # fi
