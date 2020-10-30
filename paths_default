@@ -4,6 +4,10 @@
 # add your custom stuff there!
 
 ### MACHINE-SPECIFIC PATHS AND VARIABLES ###
-SYSTEMNAME=$(uname -n)
-source $(dirname $0)/systems/${SYSTEMNAME}.zsh
 
+# Get system name 
+SYSTEMNAME=$(uname -n)
+
+# check if the system script exists and source if it exists
+SYSTEMSCRIPT=$(dirname $0)/systems/${SYSTEMNAME}.zsh
+[ -f ${SYSTEMSCRIPT} ] && source ${SYSTEMSCRIPT}
