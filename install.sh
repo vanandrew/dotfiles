@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # This file is setup to modify the .login or .bash_profile
 # file in the user's home directory
 #

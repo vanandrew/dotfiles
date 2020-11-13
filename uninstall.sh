@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # Uninstall script
 [[ -f ~/.zshrc ]] && rm ~/.zshrc
 [[ -f ~/.zsh_history ]] && rm ~/.zsh_history

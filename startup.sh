@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # This file should be called as the first command of the .bash_profile file
 # It can (and should) be installed via the install.sh script
 
