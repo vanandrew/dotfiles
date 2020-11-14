@@ -6,7 +6,7 @@
 set sysname = `uname -n`
 
 # setup valid systems to run this script on
-set validsystems = ("maeve" "rocinante")
+set validsystems = "`ls ~/.dotfiles/systems | cut -d "." -f 1`"
 
 # loop through valid systems
 foreach system ($validsystems)

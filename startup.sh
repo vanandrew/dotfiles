@@ -6,13 +6,14 @@
 export SYSNAME=$(uname -n)
 
 # setup valid systems to run this script on
-export VALIDSYSTEMS=("maeve" "rocinante")
+export VALIDSYSTEMS=($(ls ~/.dotfiles/systems))
 
 # loop through valid systems
 for SYSTEM in ${VALIDSYSTEMS[@]}; do
+  SYSTEM=${SYSTEM%.*}
   if [[ ${SYSNAME} == ${SYSTEM} ]]; then # activate zsh if a valid system
     export SHELL=/bin/zsh
     /bin/zsh # call zsh
-    exec /bin/true # force quit from calling csh for seemless shell change
+    exec /bin/true # force quit from calling bash for seemless shell change
   fi
 done
