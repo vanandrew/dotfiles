@@ -15,14 +15,14 @@ This repo contains a copy of my own dotfiles with paths and settings that I find
 
 These dotfiles are specifically meant for use with our lab systems only (so `maeve` and `rocinante`; `heisenberg` is currently not supported). When logging into other NIL systems, the scripts do not to activate, allowing you to continue to use older lab dotfile configurations without issue.
 
-## Installation
+## Installation on NIL Systems
 
 Simply run the line below on either `maeve` or `rocinante` (NOTE: The installer identifies your current shell using the $SHELL variable. If you've modified it the installer
 may not install the correct startup script for your current shell.):
 
 ```
 # bash
-sh -c "$(curl -fsSL https://gitlab.com/DosenbachGreene/dotfiles/-/raw/master/install.sh)"
+bash -c "$(curl -fsSL https://gitlab.com/DosenbachGreene/dotfiles/-/raw/master/install.sh)"
 
 # csh
 pushd ~ && curl -O https://gitlab.com/DosenbachGreene/dotfiles/-/raw/master/install.sh && chmod +x install.sh && ./install.sh && rm install.sh && popd
@@ -32,12 +32,29 @@ This will inject the startup script into the appropriate dotfiles based on your 
 
 Follow and answer any dialog questions that appear.
 
+## Installation on other machines
+
+The above procedure will redirect your `bashrc`/`cshrc` profiles to start `zsh` on startup. This adds an extra unneccessary step for starting `zsh`, but is required for NIL systems since a single SHELL profile is shared among multiple machines (and `zsh` may not necessarily be installed). Additionally, extra logic is added so that `zsh` is executed only on specific system names (e.g. `maeve`/`rocinante`). These are fail safes for NIL systems that will likely not apply when installing these dotfiles on other machines.
+
+The workaround for this behavior is to simply change the default shell to `zsh` for your user, before running the install script. This can be done with:
+
+```
+# change the default shell to zsh (you will need zsh to be installed with your system package manager)
+sudo chsh [your username]
+
+# restart your terminal (so that you are now using zsh by default) then run the install script
+bash -c "$(curl -fsSL https://gitlab.com/DosenbachGreene/dotfiles/-/raw/master/install.sh)"
+
+```
+
+Follow the rest of the dialog questions. One thing to note is that this will only setup `zsh` and it's plugins and not any neuroimaging tools (Those will need to be installed separately).
+
 ## Uninstallation
 
 Don't want this anymore? Run this:
 
 ```
-sh -c "$(curl -fsSL https://gitlab.com/DosenbachGreene/dotfiles/-/raw/master/uninstall.sh)"
+bash -c "$(curl -fsSL https://gitlab.com/DosenbachGreene/dotfiles/-/raw/master/uninstall.sh)"
 ```
 
 This will return backed up configs to their original state and remove any installed files.
@@ -76,6 +93,10 @@ export path=($path /some/location/to/custom/pkg/)
 A useful [reference guide for zsh syntax](http://www.bash2zsh.com/zsh_refcard/refcard.pdf).
 
 ## FAQ
+
+### When I run `csh`/`bash`, `zsh` is executed instead! How do I get back `csh`/`bash`
+
+These dotfiles work my redirecting the `csh`/`bash` profiles to execute `zsh` instead. You can get around this behavior by executing `csh`/`bash` with the `-f`/`--noprofile --norc` flags respectively (e.g. `csh -f` or `bash --noprofile --norc`).
 
 ### What does the install script do to my setup?
 The install script identifies your current shell through the `$SHELL` variable to install the appropriate startup file. Currently, the only shells supported are `csh`, `bash` and `zsh`.
