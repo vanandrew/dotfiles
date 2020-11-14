@@ -11,3 +11,6 @@ SYSTEMNAME=$(uname -n)
 # check if the system script exists and source if it exists
 SYSTEMSCRIPT=$(dirname $0)/systems/${SYSTEMNAME}.zsh
 [ -f ${SYSTEMSCRIPT} ] && source ${SYSTEMSCRIPT}
+
+# Reload compinit
+autoload -U compinit && compinit
