@@ -39,5 +39,5 @@ export MSMBINDIR=/opt/msm/Centos
 export path=($path /opt/msm/Centos)
 
 # set number of openmp threads to use
-export OMP_NUM_THREADS=12
+export OMP_NUM_THREADS=16
 
