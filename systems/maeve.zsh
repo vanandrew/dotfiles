@@ -38,3 +38,6 @@ export path=($path /opt/workbench/bin_rh_linux64)
 export MSMBINDIR=/opt/msm/Centos
 export path=($path /opt/msm/Centos)
 
+# set number of openmp threads to use
+export OMP_NUM_THREADS=12
+
