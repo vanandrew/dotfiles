@@ -123,3 +123,6 @@ If you are using the default configuration, it's recommended that you leave it o
 
 ### How do I change my answers to those startup questions?
 The command is `p10k configure` to rerun the [powerlevel10k](https://github.com/romkatv/powerlevel10k) theme startup prompt.
+
+### How do manually update my dotfiles?
+Simply run the `updates_dotfiles` magic function.
