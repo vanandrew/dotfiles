@@ -22,24 +22,7 @@ function update_last_updated_file() {
     echo "LAST_EPOCH=$(current_epoch)" >! "${HOME}/.cache/dotfiles-update"    
 }
 
-() {
-    emulate -L zsh
-
-    local epoch_target LAST_EPOCH
-
-    # Create or update dotfiles-update file if missing or malformed
-    if ! source "${HOME}/.cache/dotfiles-update" 2>/dev/null || [[ -z "$LAST_EPOCH"  ]]; then
-        update_last_updated_file
-        return
-    fi
-
-    # Number of days before trying to update again
-    epoch_target=${UPDATE_DOTFILES_DAYS:-13}
-    # Test if enough time has passed until the next update
-        if (( ( $(current_epoch) - $LAST_EPOCH  ) < $epoch_target )); then
-        return
-    fi
-
+function update_dotfiles() {
     # check the dotfiles repo and offer update
     echo "Checking for dotfile updates..."
     pushd ${HOME}/.dotfiles > /dev/null
@@ -62,6 +45,29 @@ function update_last_updated_file() {
         echo "No updates found."
     fi
     popd > /dev/null
+}
+
+() {
+    emulate -L zsh
+
+    local epoch_target LAST_EPOCH
+
+    # Create or update dotfiles-update file if missing or malformed
+    if ! source "${HOME}/.cache/dotfiles-update" 2>/dev/null || [[ -z "$LAST_EPOCH"  ]]; then
+        update_last_updated_file
+        update_dotfiles
+        return
+    fi
+
+    # Number of days before trying to update again
+    epoch_target=${UPDATE_DOTFILES_DAYS:-13}
+    # Test if enough time has passed until the next update
+        if (( ( $(current_epoch) - $LAST_EPOCH  ) < $epoch_target )); then
+        return
+    fi
+
+    # update the dotfiles
+    update_dotfiles
 
     # update the update file
     update_last_updated_file
