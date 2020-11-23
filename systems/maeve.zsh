@@ -38,6 +38,9 @@ export path=($path /opt/workbench/exe_rh_linux64)
 export MSMBINDIR=/opt/msm/Centos
 export path=($path /opt/msm/Centos)
 
+# add dcmtk
+export path=($path /opt/dcmtk/bin)
+
 # set number of openmp threads to use
 export OMP_NUM_THREADS=16
 
