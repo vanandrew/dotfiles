@@ -158,7 +158,7 @@ elif [[ ${CURRENTSHELL} == "/bin/bash" || ${CURRENTSHELL} == "/bin/sh" || ${CURR
     # modify .bash_profile
     bashrc_install
   fi
-elif [[ ${CURRENTSHELL} == "/bin/zsh" ]]; then
+elif [[ ${CURRENTSHELL} == "/bin/zsh" || ${CURRENTSHELL} == "/usr/bin/zsh" ]]; then
   echo "Current shell is zsh. It is assumed that the appropriate login script has been modified."
 else # Other shells
   echo "Unknown shell detected. Quitting installation..."
