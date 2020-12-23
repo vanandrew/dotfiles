@@ -94,7 +94,7 @@ A useful [reference guide for zsh syntax](http://www.bash2zsh.com/zsh_refcard/re
 
 ## FAQ
 
-### When I run `csh`/`bash`, `zsh` is executed instead! How do I get back `csh`/`bash`
+### When I run `csh`/`bash`, `zsh` is executed instead! How do I get back `csh`/`bash`?
 
 These dotfiles work my redirecting the `csh`/`bash` profiles to execute `zsh` instead. You can get around this behavior by executing `csh`/`bash` with the `-f`/`--noprofile --norc` flags respectively (e.g. `csh -f` or `bash --noprofile --norc`).
 
