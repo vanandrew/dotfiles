@@ -176,7 +176,7 @@ else
   git clone https://gitlab.com/DosenbachGreene/dotfiles.git ~/.dotfiles
 fi
 # clone oh-my-zsh
-[ ! -d ~/.oh-my-zsh ] && git clone https://github.com/ohmyzsh/ohmyzsh.git ~/.oh-my-zsh
+[ ! -d ~/.oh-my-zsh ] && git clone https://github.com/ohmyzsh/ohmyzsh.git ~/.oh-my-zsh && chmod -R 755 ~/.oh-my-zsh
 # clone theme
 pushd ~/.oh-my-zsh/custom/themes > /dev/null
 [ ! -d ./powerlevel10k ] && git clone https://github.com/romkatv/powerlevel10k.git
