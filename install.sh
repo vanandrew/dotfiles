@@ -181,17 +181,17 @@ fi
 pushd ~/.oh-my-zsh/custom/themes > /dev/null
 [ ! -d ./powerlevel10k ] && git clone https://github.com/romkatv/powerlevel10k.git
 cd powerlevel10k
-git pull && git checkout v1.14.5
+git fetch && git checkout v1.14.5
 popd > /dev/null
 # clone plugins
 pushd ~/.oh-my-zsh/custom/plugins > /dev/null
 [ ! -d zsh-autosuggestions ] && git clone https://github.com/zsh-users/zsh-autosuggestions.git
 cd zsh-autosuggestions
-git pull && git checkout v0.6.4
+git fetch && git checkout v0.6.4
 cd ..
 [ ! -d zsh-syntax-highlighting ] && git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
 cd zsh-syntax-highlighting
-git pull && git checkout 0.7.1
+git fetch && git checkout 0.7.1
 cd ..
 popd > /dev/null
 # the current zshrc in home if not exist
