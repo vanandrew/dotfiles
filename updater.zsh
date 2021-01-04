@@ -40,6 +40,10 @@ function update_dotfiles() {
         echo "versions by using 'diff .zshrc ~/.dotfiles/zshrc' and 'diff .paths_user ~/.dotfiles/paths_user'"
         echo "and change your files accordingly."
         echo ""
+        echo "On NIL computers, $REFDIR has been reassigned to /opt/4dfp_tools/refdir for better performance."
+        echo "If you have hardcoded the original GMT/refdir directory into your code, you should update your"
+        echi "scripts to use /opt/4dfp_tools/refdir instead."
+        echo ""
         echo "If you do not know what any of the above means, you can safely ignore the above message."
     else
         echo "No updates found."
