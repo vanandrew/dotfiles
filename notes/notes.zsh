@@ -1,6 +1,4 @@
-# This file should be sourced automatically by the zshrc
-# IT IS NOT INTENDED TO BE RUN MANUALLY
-# This should be called after the .paths_user has been sourced
+# List announcements for users here
 
 echo "Update Note: This updater does not currently auto-update your .zshrc and .paths_user files if they"
 echo "already exist in your home directory. You may want to check the differences between the"
