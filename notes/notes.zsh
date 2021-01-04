@@ -11,4 +11,3 @@ echo "%{$fg[orange]%}If you have hardcoded the original GMT/refdir directory int
 echo "%{$fg[orange]%}scripts to use /opt/4dfp_tools/refdir instead."
 echo "%{$fg[orange]%}"
 echo "%{$fg[orange]%}If you do not know what any of the above means, you can safely ignore the above message."
-
