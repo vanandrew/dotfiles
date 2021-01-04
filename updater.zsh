@@ -35,7 +35,7 @@ function update_dotfiles() {
         echo ""
         echo "Update Complete!"
         echo ""
-        source ./notes/notes/.zsh
+        source ./notes/notes.zsh
     else
         echo "No updates found."
     fi
