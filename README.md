@@ -61,13 +61,13 @@ This will return backed up configs to their original state and remove any instal
 
 ## Features
 
-- Paths to up-to-date common lab software
-    - 4dfp (latest)
-    - ANTS (latest)
-    - FSL (6.0.3)
-    - AFNI (20.0.18)
-    - Freesurfer (6.0.0)
-    - Connectome Workbench (1.4.2)
+- Paths pre-setup to common lab software
+    - 4dfp
+    - ANTS
+    - FSL
+    - AFNI
+    - Freesurfer
+    - Connectome Workbench
 - Clear location for user config; Simply use the `~/.paths_user` file and script away!
 - Default shell changed to zsh, with the [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh) plugin manager installed.
 - Terminal Theming (Default is set to [powerlevel10k](https://github.com/romkatv/powerlevel10k))
