@@ -12,4 +12,3 @@ echo "If you have hardcoded the original GMT/refdir directory into your code, yo
 echo "scripts to use /opt/4dfp_tools/refdir instead."
 echo ""
 echo "If you do not know what any of the above means, you can safely ignore the above message."
-
