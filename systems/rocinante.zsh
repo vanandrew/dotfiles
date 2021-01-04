@@ -19,7 +19,7 @@ export path=($path $ANTSPATH)
 # 4dfp tools
 export NILSRC=/opt/4dfp_tools/NILSRC
 export RELEASE=/opt/4dfp_tools/RELEASE
-export REFDIR=${GMT}/refdir
+export REFDIR=/opt/4dfp_tools/refdir
 export path=($path $RELEASE)
 
 # c3d

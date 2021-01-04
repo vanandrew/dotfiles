@@ -12,14 +12,14 @@ source ${FSLDIR}/etc/fslconf/fsl.sh
 source ${FREESURFER_HOME}/SetUpFreeSurfer.sh > /dev/null
 
 # ants
-export ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS=8
+export ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS=16
 export ANTSPATH=/opt/ants/install/bin
 export path=($path $ANTSPATH)
 
 # 4dfp tools
 export NILSRC=/opt/4dfp_tools/NILSRC
 export RELEASE=/opt/4dfp_tools/RELEASE
-export REFDIR=${GMT}/refdir
+export REFDIR=/opt/4dfp/refdir
 export path=($path $RELEASE)
 
 # c3d
