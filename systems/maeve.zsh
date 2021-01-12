@@ -32,7 +32,7 @@ export path=($path /opt/c3d/c3d-1.0.0-Linux-x86_64/bin)
 export path=($path /usr/local/pkg/afni)
 
 # add workbench
-export path=($path /opt/workbench/exe_rh_linux64)
+export path=($path /opt/workbench/bin_rh_linux64)
 
 # add msm
 export MSMBINDIR=/opt/msm/Centos
