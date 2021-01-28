@@ -10,4 +10,6 @@ echo "$fg[cyan]On NIL computers, \$REFDIR has been reassigned to /opt/4dfp_tools
 echo "$fg[cyan]If you have hardcoded the original GMT/refdir directory into your code, you should update your"
 echo "$fg[cyan]scripts to use /opt/4dfp_tools/refdir instead."
 echo ""
+echo "$fg[cyan]01/28/2021: dcm2niix added to path"
+echo ""
 echo "$fg[cyan]If you do not know what any of the above means, you can safely ignore the above message."

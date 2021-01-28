@@ -41,6 +41,9 @@ export path=($path /opt/msm/Centos)
 # add dcmtk
 export path=($path /opt/dcmtk/bin)
 
+# add dcm2niix
+export path=($path /opt/dcm2niix/build/bin)
+
 # set number of openmp threads to use
 export OMP_NUM_THREADS=16
 

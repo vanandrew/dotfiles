@@ -35,6 +35,9 @@ export path=($path /opt/workbench/bin_linux64)
 export MSMBINDIR=/opt/msm/Ubuntu
 export path=($path /opt/msm/Ubuntu)
 
+# add dcm2niix
+export path=($path /opt/dcm2niix/build/bin)
+
 # set number of openmp threads to use
 export OMP_NUM_THREADS=16
 
