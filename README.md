@@ -94,6 +94,13 @@ A useful [reference guide for zsh syntax](http://www.bash2zsh.com/zsh_refcard/re
 
 ## FAQ
 
+### I'm experiencing performance issues when using these dotfiles on certain drive paths!
+Some plugins have bad interaction with certain zfs mounts on the NIL. One such plugin is the `zsh-syntax-highlighting` (which
+you can disable by removing the relevant line in your `.zshrc` file).
+
+In some cases, in may be necessary to disable your `dir` and `vcs` prompts (these can be found in your
+`.p10k.zsh` file located on your home directory). Commenting out these lines will remove the current working directory display and version control status from your prompt, but may be necessary for performance reasons.
+
 ### When I run `csh`/`bash`, `zsh` is executed instead! How do I get back `csh`/`bash`?
 
 These dotfiles work my redirecting the `csh`/`bash` profiles to execute `zsh` instead. You can get around this behavior by executing `csh`/`bash` with the `-f`/`--noprofile --norc` flags respectively (e.g. `csh -f` or `bash --noprofile --norc`).
