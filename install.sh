@@ -161,7 +161,7 @@ elif [[ ${CURRENTSHELL} == "/bin/bash" || ${CURRENTSHELL} == "/bin/sh" || ${CURR
 elif [[ ${CURRENTSHELL} == "/bin/zsh" || ${CURRENTSHELL} == "/usr/bin/zsh" ]]; then
   echo "Current shell is zsh. It is assumed that the appropriate login script has been modified."
 else # Other shells
-  echo "Unknown shell detected. Quitting installation..."
+  echo "Unknown shell detected. Assuming zsh. If this is not correct be aware that his script may not work..."
 fi
 
 # change to home directory
