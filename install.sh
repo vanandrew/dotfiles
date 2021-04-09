@@ -181,7 +181,7 @@ fi
 pushd ~/.oh-my-zsh/custom/themes > /dev/null
 [ ! -d powerlevel10k ] && git clone https://github.com/romkatv/powerlevel10k.git && chmod -R 755 powerlevel10k
 cd powerlevel10k
-git reset --hard && git fetch && git checkout v1.14.5 && cd .. && chmod -R 755 powerlevel10k
+git reset --hard && git fetch && git checkout v1.14.6 && cd .. && chmod -R 755 powerlevel10k
 popd > /dev/null
 # clone plugins
 pushd ~/.oh-my-zsh/custom/plugins > /dev/null
