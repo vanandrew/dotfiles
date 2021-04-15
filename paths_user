@@ -10,7 +10,7 @@
 # export UPDATE_DOTFILES_DAYS=13
 
 # set editor
-export EDITOR='vim'
+# export EDITOR='vim'
 
 # enable gcc-8 toolchain for Centos Systems (maeve as example)
 # if [[ "$(uname -n)" == "maeve" ]]; then
@@ -22,8 +22,11 @@ export EDITOR='vim'
 #     export CPLUS_INCLUDE_PATH=${CPLUS_INCLUDE_PATH:+${CPLUS_INCLUDE_PATH}:}/usr/include/hdf5/serial
 # fi
 
-# use color ls  
-alias ls='ls --color=auto'
+# set directory coloring
+# eval $(dircolors)
+
+# use color ls
+# alias ls='ls --color=auto'
 # or
 # use lsd (ls with icons, written in rust)
 # export path=($path /opt/rust/cargo/bin)

@@ -77,9 +77,6 @@ plugins=(
 # Enable autosuggestion async mode
 export ZSH_AUTOSUGGEST_USE_ASYNC=1
 
-# set directory coloring
-eval $(dircolors)
-
 # Call oh-my-zsh plugins
 source $ZSH/oh-my-zsh.sh
 
