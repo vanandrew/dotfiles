@@ -47,6 +47,3 @@ export path=($path /opt/dcm2niix/build/bin)
 # set number of openmp threads to use
 export OMP_NUM_THREADS=16
 
-# add ${HOME}/bin to path
-export path=($path ${HOME}/bin)
-
