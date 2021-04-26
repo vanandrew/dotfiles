@@ -150,4 +150,4 @@ If you are using the default configuration, it's recommended that you leave it o
 The command is `p10k configure` to rerun the [powerlevel10k](https://github.com/romkatv/powerlevel10k) theme startup prompt.
 
 ### How do manually update my dotfiles?
-Simply run `update_dotfiles`. A magic function defined under `~/.dotfiles/updater.zsh`.
+Simply run `update_dotfiles` in your terminal. If you are curious about what this command does, it is a magic function defined under `~/.dotfiles/updater.zsh`.
