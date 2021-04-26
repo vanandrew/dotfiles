@@ -1,9 +1,9 @@
 #!/bin/bash
-# This file is setup to modify the .login or .bash_profile
-# file in the user's home directory
+# This file is setup to modify the .login, .bash_profile,
+# .cshrc, and .bashrc files in the user's home directory
 #
-# It backs up the previous .login file as
-# .login.bak and .bash_profile as .bash_profile.bak
+# It backs up the previous files as
+# ${FILENAME}.bak
 
 # query user input for install
 echo ""
@@ -20,7 +20,8 @@ echo "            ~~~~ {_ -_(())"
 echo ""
 echo "This will setup Andrew's lab dotfile configuration."
 echo "This installer should be run ONLY on maeve or rocinante."
-echo "No other systems are currently supported."
+echo "Other systems are only supported if the user shell is"
+echo "set to zsh."
 echo "######################################################"
 echo ""
 read -p "Continue? [y/N]: " vcontinue
@@ -205,8 +206,9 @@ echo "Logout then login to see the new changes."
 echo ""
 echo "If this is the initial install, you will get a series"
 echo "of prompts on restart. Simply answer all the questions"
-echo "when asked. If you have questions/concerns, see this"
-echo "FAQ: https://gitlab.com/DosenbachGreene/dotfiles#faq"
-echo "or contact me on Slack --Andrew"
+echo "when asked. It is HIGHLY recommended that you take a look"
+echo "at the FAQ: https://gitlab.com/DosenbachGreene/dotfiles#faq"
+echo "Contact me on Slack if you have any questions or concerns."
+echo "--Andrew"
 echo "######################################################"
 echo ""
