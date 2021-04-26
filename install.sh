@@ -182,16 +182,16 @@ fi
 pushd ~/.oh-my-zsh/custom/themes > /dev/null
 [ ! -d powerlevel10k ] && git clone https://github.com/romkatv/powerlevel10k.git && chmod -R 755 powerlevel10k
 cd powerlevel10k
-git reset --hard && git fetch && git checkout v1.14.6 && cd .. && chmod -R 755 powerlevel10k
+git reset --hard && git checkout master && git pull && git checkout v1.14.6 && cd .. && chmod -R 755 powerlevel10k
 popd > /dev/null
 # clone plugins
 pushd ~/.oh-my-zsh/custom/plugins > /dev/null
 [ ! -d zsh-autosuggestions ] && git clone https://github.com/zsh-users/zsh-autosuggestions.git && chmod -R 755 zsh-autosuggestions
 cd zsh-autosuggestions
-git reset --hard && git fetch && git checkout v0.6.4 && cd .. && chmod -R 755 zsh-autosuggestions
+git reset --hard && git checkout master && git pull && git checkout v0.6.4 && cd .. && chmod -R 755 zsh-autosuggestions
 [ ! -d zsh-syntax-highlighting ] && git clone https://github.com/zsh-users/zsh-syntax-highlighting.git && chmod -R 755 zsh-syntax-highlighting
 cd zsh-syntax-highlighting
-git reset --hard && git fetch && git checkout 0.7.1 && cd .. && chmod -R 755 zsh-syntax-highlighting
+git reset --hard && git checkout master && git pull && git checkout 0.7.1 && cd .. && chmod -R 755 zsh-syntax-highlighting
 popd > /dev/null
 # the current zshrc in home if not exist
 [ ! -f ~/.zshrc ] && cp ~/.dotfiles/zshrc ~/.zshrc
