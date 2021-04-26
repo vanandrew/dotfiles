@@ -32,7 +32,7 @@ fi
 echo ""
 
 # Get the current shell type
-export CURRENTSHELL=${SHELL}
+export CURRENTSHELL=$(basename ${SHELL})
 
 # define csh .login modifier function
 csh_login_install() {
@@ -81,7 +81,7 @@ bashrc_install() {
 }
 
 # For csh install
-if [[ ${CURRENTSHELL} == "/bin/csh" || ${CURRENTSHELL} == "/bin/tcsh" || ${CURRENTSHELL} == "/usr/bin/csh" || ${CURRENTSHELL} == "/usr/bin/tcsh" ]]; then
+if [[ ${CURRENTSHELL} == "csh" || ${CURRENTSHELL} == "tcsh" ]]; then
   # copy the current login file if it exists
   if [ -f ~/.login ]; then
     echo "Detecting existing .login file..."
@@ -120,7 +120,7 @@ if [[ ${CURRENTSHELL} == "/bin/csh" || ${CURRENTSHELL} == "/bin/tcsh" || ${CURRE
     # modify .cshrc
     cshrc_install
   fi
-elif [[ ${CURRENTSHELL} == "/bin/bash" || ${CURRENTSHELL} == "/bin/sh" || ${CURRENTSHELL} == "/usr/bin/bash" || ${CURRENTSHELL} == "/usr/bin/sh" ]]; then # For Bash
+elif [[ ${CURRENTSHELL} == "bash" || ${CURRENTSHELL} == "sh" ]]; then # For Bash
   # copy the current bash_profile if it exists
   if [ -f ~/.bash_profile ]; then
     echo "Detecting existing .bash_profile..."
@@ -159,10 +159,10 @@ elif [[ ${CURRENTSHELL} == "/bin/bash" || ${CURRENTSHELL} == "/bin/sh" || ${CURR
     # modify .bash_profile
     bashrc_install
   fi
-elif [[ ${CURRENTSHELL} == "/bin/zsh" || ${CURRENTSHELL} == "/usr/bin/zsh" ]]; then
+elif [[ ${CURRENTSHELL} == "zsh" || ${CURRENTSHELL} == "zsh" ]]; then
   echo "Current shell is zsh. It is assumed that the appropriate login script has been modified."
 else # Other shells
-  echo "Unknown shell detected. Assuming zsh. If this is not correct be aware that his script may not work..."
+  echo "Unknown shell detected. Assuming zsh. If this is not correct be aware that this script may not work..."
 fi
 
 # change to home directory
