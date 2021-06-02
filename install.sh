@@ -177,21 +177,21 @@ else
   git clone https://gitlab.com/DosenbachGreene/dotfiles.git ~/.dotfiles
 fi
 # clone oh-my-zsh
-[ ! -d ~/.oh-my-zsh ] && git clone https://github.com/ohmyzsh/ohmyzsh.git ~/.oh-my-zsh && chmod -R 644 ~/.oh-my-zsh
+[ ! -d ~/.oh-my-zsh ] && git clone https://github.com/ohmyzsh/ohmyzsh.git ~/.oh-my-zsh
 # clone theme3
 pushd ~/.oh-my-zsh/custom/themes > /dev/null
-[ ! -d powerlevel10k ] && git clone https://github.com/romkatv/powerlevel10k.git && chmod -R 644 powerlevel10k
+[ ! -d powerlevel10k ] && git clone https://github.com/romkatv/powerlevel10k.git
 cd powerlevel10k
-git reset --hard && git checkout master && git pull && git checkout v1.14.6 && cd .. && chmod -R 644 powerlevel10k
+git reset --hard && git checkout master && git pull && git checkout v1.14.6 && cd ..
 popd > /dev/null
 # clone plugins
 pushd ~/.oh-my-zsh/custom/plugins > /dev/null
-[ ! -d zsh-autosuggestions ] && git clone https://github.com/zsh-users/zsh-autosuggestions.git && chmod -R 644 zsh-autosuggestions
+[ ! -d zsh-autosuggestions ] && git clone https://github.com/zsh-users/zsh-autosuggestions.git
 cd zsh-autosuggestions
-git reset --hard && git checkout master && git pull && git checkout v0.6.4 && cd .. && chmod -R 644 zsh-autosuggestions
-[ ! -d zsh-syntax-highlighting ] && git clone https://github.com/zsh-users/zsh-syntax-highlighting.git && chmod -R 644 zsh-syntax-highlighting
+git reset --hard && git checkout master && git pull && git checkout v0.6.4 && cd ..
+[ ! -d zsh-syntax-highlighting ] && git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
 cd zsh-syntax-highlighting
-git reset --hard && git checkout master && git pull && git checkout 0.7.1 && cd .. && chmod -R 644 zsh-syntax-highlighting
+git reset --hard && git checkout master && git pull && git checkout 0.7.1 && cd ..
 popd > /dev/null
 # the current zshrc in home if not exist
 [ ! -f ~/.zshrc ] && cp ~/.dotfiles/zshrc ~/.zshrc
