@@ -14,3 +14,28 @@ SYSTEMSCRIPT=$(dirname $0)/systems/${SYSTEMNAME}.zsh
 
 # Reload compinit
 autoload -U compinit && compinit
+
+# MATLAB crash log dump cleaner
+function matlab_log_cleaner() {
+    # check the home directory for MATLAB crash logs
+    matlab_crash_logs=($(find ${HOME} -maxdepth 1 -name 'matlab_crash_dump.*'))
+    # check for java logs
+    java_logs=($(find ${HOME} -maxdepth 1 -name 'java.log.*'))
+
+    if [[ ${#matlab_crash_logs[@]} -gt 0 || ${#java_logs[@]} -gt 0 ]]; then
+        echo "matlab log cleaner found ${#matlab_crash_logs[@]} crash logs and ${#java_logs[@]} java logs."
+        read "vcontinue?Would you like for me to clean this up for you? [y/N]: "    
+	    if [[ "$vcontinue" =~ ^[Yy] ]]; then
+            # remove logs
+            [[ ${#matlab_crash_logs[@]} -gt 0 ]] && rm ${HOME}/matlab_crash_dump.*
+            [[  ${#java_logs[@]} -gt 0 ]] && rm ${HOME}/java.log.*
+            echo "Log files were removed."
+        else
+            echo "Not cleaning log files. Use 'matlab_log_cleaner' to recall this script again."
+        fi
+    fi
+}
+
+# run matlab log cleaner on startup
+matlab_log_cleaner
+

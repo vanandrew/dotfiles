@@ -1,6 +1,10 @@
 # List announcements for users here
 
 echo "$fg[cyan]Update Notes:"
+echo ""
+echo "$fg[red]Check out the new 'matlab_log_cleaner' command to clean up leftover MATLAB"
+echo "$fg[red]log files in your home directory!"
+echo ""
 echo "$fg[cyan]This updater does not auto-update your .zshrc and .paths_user files if they"
 echo "$fg[cyan]already exist in your home directory. You may want to check the differences between the"
 echo "$fg[cyan]versions by using 'diff .zshrc ~/.dotfiles/zshrc' and 'diff .paths_user ~/.dotfiles/paths_user'"
