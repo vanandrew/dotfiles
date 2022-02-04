@@ -23,7 +23,7 @@ function matlab_log_cleaner() {
     java_logs=($(find ${HOME} -maxdepth 1 -name 'java.log.*'))
 
     if [[ ${#matlab_crash_logs[@]} -gt 0 || ${#java_logs[@]} -gt 0 ]]; then
-        echo "matlab log cleaner found ${#matlab_crash_logs[@]} crash logs and ${#java_logs[@]} java logs."
+        echo "$fg[red]matlab log cleaner found ${#matlab_crash_logs[@]} crash logs and ${#java_logs[@]} java logs.$reset_color"
         read "vcontinue?Would you like for me to clean this up for you? [y/N]: "    
 	    if [[ "$vcontinue" =~ ^[Yy] ]]; then
             # remove logs
