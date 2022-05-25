@@ -68,11 +68,9 @@ DISABLE_UPDATE_PROMPT="true"
 plugins=(
     git
     zsh-autosuggestions
+    zsh-syntax-highlighting
+    virtualenvwrapper
 )
-# Add the line below into the plugins list above for syntax highlighting
-# It has been disabled by default for performance issues in some setups
-#
-# zsh-syntax-highlighting
 
 # Enable autosuggestion async mode
 export ZSH_AUTOSUGGEST_USE_ASYNC=1

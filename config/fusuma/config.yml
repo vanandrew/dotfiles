@@ -1,0 +1,16 @@
+swipe:
+  3:
+    left:
+      sendkey: 'LEFTALT+LEFT'
+    right:
+      sendkey: 'LEFTALT+RIGHT'
+  4:
+    down:
+      sendkey: 'LEFTALT+F1'
+    up:
+      sendkey: 'LEFTMETA+A'
+    left:
+      sendkey: 'LEFTMETA+PAGEUP'
+    right:
+      sendkey: 'LEFTMETA+PAGEDOWN'
+

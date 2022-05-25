@@ -1,0 +1,1 @@
+regexSearch: bad_expression: Incomplete escape sequence found.  The error occurred while parsing the regular expression: 'hlkj\>>>HERE>>>'.
