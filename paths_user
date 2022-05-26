@@ -9,22 +9,6 @@
 # Uncomment the following line to change how often to auto-update the dotfiles (in days).
 # export UPDATE_DOTFILES_DAYS=13
 
-# set editor
-# export EDITOR='vim'
-
-# enable gcc-8 toolchain for Centos Systems (maeve as example)
-# if [[ "$(uname -n)" == "maeve" ]]; then
-#     source /opt/rh/devtoolset-8/enable 
-# fi
-
-# set hdf5 library at another location (rocinante as example)
-# if [[ "$(uname -n)" == "rocinante" ]]; then
-#     export CPLUS_INCLUDE_PATH=${CPLUS_INCLUDE_PATH:+${CPLUS_INCLUDE_PATH}:}/usr/include/hdf5/serial
-# fi
-
-# set directory coloring
-# eval $(dircolors)
-
 # use color ls
 # alias ls='ls --color=auto'
 # or
