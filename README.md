@@ -3,12 +3,12 @@ This repo contains a copy of my own dotfiles with paths and settings.
 
 ## Installation
 ```
-bash -c "$(curl -fsSL https://gitlab.com/DosenbachGreene/dotfiles/-/raw/master/install.sh)"
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/vanandrew/dotfiles/master/install.sh)"
 ```
 
 ## Uninstallation
 
 ```
-bash -c "$(curl -fsSL https://gitlab.com/DosenbachGreene/dotfiles/-/raw/master/uninstall.sh)"
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/vanandrew/dotfiles/master/uninstall.sh)"
 ```
 
