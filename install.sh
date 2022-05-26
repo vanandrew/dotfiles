@@ -36,13 +36,13 @@ fi
 # change to home directory
 echo "Adding in zsh plugins..."
 pushd ~ > /dev/null
-# git clone the lab dotfile repo if not exist; otherwise just pull
+# git clone the dotfile repo if not exist; otherwise just pull
 if [ -d ~/.dotfiles ]; then
   pushd ~/.dotfiles > /dev/null
   git pull
   popd > /dev/null
 else
-  git clone https://gitlab.com/DosenbachGreene/dotfiles.git ~/.dotfiles
+  git clone https://github.com/vanandrew/dotfiles.git ~/.dotfiles
 fi
 # clone oh-my-zsh
 [ ! -d ~/.oh-my-zsh ] && git clone https://github.com/ohmyzsh/ohmyzsh.git ~/.oh-my-zsh
