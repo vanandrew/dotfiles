@@ -69,7 +69,6 @@ plugins=(
     git
     zsh-autosuggestions
     zsh-syntax-highlighting
-    virtualenvwrapper
 )
 
 # Enable autosuggestion async mode
@@ -78,7 +77,7 @@ export ZSH_AUTOSUGGEST_USE_ASYNC=1
 # Call oh-my-zsh plugins
 source $ZSH/oh-my-zsh.sh
 
-# Call default lab paths
+# Call default machine specific paths
 source ${HOME}/.dotfiles/paths_default
 
 # Call user path configuration if it exists
