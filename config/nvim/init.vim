@@ -9,6 +9,7 @@ set expandtab
 set showmatch
 set autoindent
 set wildmode=longest,list
+set guicursor=
 filetype plugin indent on
 syntax on
 
