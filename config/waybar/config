@@ -1,0 +1,93 @@
+{
+    "layer": "top",
+    "modules-left": ["custom/silentmode", "keyboard-state", "mpd"],
+    "modules-center": ["wlr/workspaces"],
+    "modules-right": ["tray", "backlight", "pulseaudio", "battery", "network", "clock", "custom/power"],
+
+    "keyboard-state": {
+        "capslock": true,
+        "format": {
+            "capslock": "{icon}"
+        },
+        "format-icons": {
+            "locked": "",
+            "unlocked": ""
+        }
+    },
+    "backlight": {
+        "format-icons": ["", "", "", " ", " ", " ", " "],
+        "format": "{icon} {percent}%"
+    },
+    "battery": {
+        "bat": "BAT0",
+        "format": "{capacity}% {icon}",
+        "format-Not charging": "{capacity}% ",
+        "format-icons": ["", "", "", "", ""],
+    },
+    "mpd": {
+        "server": "localhost",
+        "port": 6600,
+        "format": "{stateIcon}  {title} - {artist}",
+        "tooltip-format": "{title} - {artist} - {album}",
+        "on-click": "mpc toggle",
+        "interval": 1,
+        "format-stopped": "",
+        "state-icons": {
+            "paused": "",
+            "playing": ""
+        }
+    },
+    "wlr/workspaces": {
+        "format": "{icon}",
+        "on-click": "activate",
+        "format-icons": {
+            "default": "",
+            "urgent": "",
+            "active": ""
+        }
+    },
+    "network": {
+        "format-wifi": "{essid} ({signalStrength}%) ",
+        "format-ethernet": "{ifname} ",
+        "format-disconnected": "", 
+        "max-length": 50
+    },
+    "tray": {
+        "icon-size": 15,
+        "spacing": 10
+    },
+    "clock": {
+        "interval": 1,
+        "format": "{:%c}",
+        "timezone": "America/Chicago",
+        "tooltip-format": "<big>{:%Y %B %d}</big>\n<tt><small>{calendar}</small></tt>"
+    },
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-bluetooth": "{volume}% {icon} {format_source}",
+        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-muted": "0% {icon} ",
+        "format-source": "{volume}% ",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol"
+    },
+	"custom/power": {
+		"format": "",
+		"on-click": "${HOME}/.config/polybar/material/scripts/powermenu.sh"
+	},
+    "custom/silentmode": {
+        "format": "{}",
+        "exec": "[[ $(xfconf-query -c xfce4-notifyd -p /do-not-disturb) == false ]] && echo  || echo ",
+        "interval": 1,
+        "on-click": "${HOME}/.config/hypr/do-not-disturb.sh"
+    }
+}

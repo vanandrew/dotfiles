@@ -1,0 +1,20 @@
+@import "colors.rasi"
+@import "material_pywal_custom.rasi"
+
+window {
+    width: 300px;
+    height: 280px;
+}
+
+inputbar {
+	children: [ prompt ];
+}
+
+listview {
+	scrollbar: false;
+    margin: 0 30px 0 30px;
+}
+
+element-text {
+    margin: 0px;
+}

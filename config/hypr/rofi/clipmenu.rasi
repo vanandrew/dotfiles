@@ -1,0 +1,11 @@
+@import "colors.rasi"
+@import "material_pywal_custom.rasi"
+
+inputbar {
+	children: [ textbox-prompt-colon, entry ];
+}
+
+textbox-prompt-colon {
+    font: "Material\-Design\-Iconic\-Font 10";
+    str: "";
+}
