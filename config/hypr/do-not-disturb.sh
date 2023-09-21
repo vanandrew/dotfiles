@@ -3,10 +3,10 @@
 STATE=$(xfconf-query -c xfce4-notifyd -p /do-not-disturb)
 
 if [[ "$STATE" == "true" ]]; then
-    xfconf-query -c xfce4-notifyd -p /do-not-disturb -T
-    /home/vanandrew/.local/bin/notify-send.py -i notification-symbolic "Silent Mode OFF" --replaces-process disturb
+    xfconf-query -c xfce4-notifyd -p /do-not-disturb -T && \
+    notify-send -i notification-symbolic "Silent Mode OFF" -r 444
 else
-    /home/vanandrew/.local/bin/notify-send.py -i notification-disabled-symbolic "Silent Mode ON  " --replaces-process disturb
+    notify-send -i notification-disabled-symbolic "Silent Mode ON" -r 444 --wait && \
     xfconf-query -c xfce4-notifyd -p /do-not-disturb -T
 fi
 

@@ -66,18 +66,25 @@ DISABLE_UPDATE_PROMPT="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
+    cp
     git
     zsh-autosuggestions
     zsh-syntax-highlighting
+    virtualenvwrapper
 )
+# Add the line below into the plugins list above for syntax highlighting
+# It has been disabled by default for performance issues in some setups
 
 # Enable autosuggestion async mode
 export ZSH_AUTOSUGGEST_USE_ASYNC=1
 
+# set directory coloring
+eval $(dircolors)
+
 # Call oh-my-zsh plugins
 source $ZSH/oh-my-zsh.sh
 
-# Call default machine specific paths
+# Call default lab paths
 source ${HOME}/.dotfiles/paths_default
 
 # Call user path configuration if it exists

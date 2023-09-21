@@ -1,0 +1,11 @@
+[Unit]
+Description=VNC Tunnel to Maeve
+Documentation=
+After=network-online.target
+
+[Service]
+ExecStart=/usr/bin/ssh -o "ServerAliveInterval 30" -o "ServerAliveCountMax 3" -o ExitOnForwardFailure=yes -i /home/vanandrew/.ssh/id_rsa -v -N -L 3002:10.20.145.93:5910 vana@dosenbachlab.wustl.edu
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

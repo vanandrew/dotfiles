@@ -319,7 +319,7 @@ now_playing_suffix = $/b
 ## Note: Custom command that will be executed each time song changes. Useful for
 ## notifications etc.
 ##
-execute_on_song_change = notify-send.py "Now Playing" "$(mpc --format '%title% \n%artist% - %album%' current)" --replaces-process MPD & > /dev/null
+execute_on_song_change = notify-send "Now Playing" "$(mpc --format '%title% \n%artist% - %album%' current)" -r 7777777 > /dev/null &
 #
 ##
 ## Note: Custom command that will be executed each time player state
