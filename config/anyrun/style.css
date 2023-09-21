@@ -1,39 +1,60 @@
 @import "/home/vanandrew/.cache/wal/colors-waybar.css";
 
 #window {
+  caret-color: @foreground;
   background-color: rgba(0, 0, 0, 0);
 }
 
-box#main {
-  border-radius: 10px;
+entry#entry {
+  font-size: 18;
+  color: @foreground;
   background-color: @background;
-  opacity: 0.95;
+  border-color: rgba(0, 0, 0, 0);
+  padding: 20px;
+  border-radius: 20px;
+}
+
+box#main {
+  background-color: @background;
+  border-radius: 20px;
 }
 
 list#main {
   background-color: rgba(0, 0, 0, 0);
-  border-radius: 10px;
 }
 
 list#plugin {
   background-color: rgba(0, 0, 0, 0);
 }
 
+row#match:selected label {
+  color: @background;
+}
+
 row#match:selected {
   background-color: @foreground;
 }
 
+row#match label {
+  color: @foreground;
+}
+
 label#match-title {
-  font-weight: 400;
+  font-size: 18px;
+  font-weight: 300;
 }
 
 label#match-desc {
-  font-size: 10px;
-  font-weight: 400;
+  font-size: 16px;
+  font-weight: 300;
 }
 
 label#plugin {
-  font-size: 14px;
+  font-size: 18px;
   color: @foreground;
+}
+
+row#plugin:hover {
+  background-color: @background;
 }
 
