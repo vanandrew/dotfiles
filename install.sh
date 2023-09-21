@@ -50,16 +50,14 @@ fi
 pushd ~/.oh-my-zsh/custom/themes > /dev/null
 [ ! -d powerlevel10k ] && git clone https://github.com/romkatv/powerlevel10k.git
 cd powerlevel10k
-git reset --hard && git checkout master && git pull && git checkout v1.16.0 && cd ..
+git reset --hard && git checkout master && git pull && git checkout v1.19.0 && cd ..
 popd > /dev/null
 # clone plugins
 pushd ~/.oh-my-zsh/custom/plugins > /dev/null
-[ ! -d zsh-autosuggestions ] && git clone https://github.com/zsh-users/zsh-autosuggestions.git
-cd zsh-autosuggestions
-git reset --hard && git checkout master && git pull && git checkout v0.7.0 && cd ..
-[ ! -d zsh-syntax-highlighting ] && git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
-cd zsh-syntax-highlighting
-git reset --hard && git checkout master && git pull && git checkout 0.7.1 && cd ..
+[ ! -d zsh-autocomplete ] && git clone https://github.com/marlonrichert/zsh-autocomplete.git
+cd zsh-autocomplete && git reset --hard && git checkout main && git pull && git checkout 23.07.13 && cd ..
+[ ! -d F-Sy-H ] && git clone https://github.com/z-shell/F-Sy-H.git
+cd F-Sy-H && git reset --hard && git checkout main && git pull && git checkout v1.67 && cd ..
 popd > /dev/null
 # the current zshrc in home if not exist
 [ ! -f ~/.zshrc ] && cp ~/.dotfiles/zshrc ~/.zshrc
