@@ -1,36 +1,16 @@
-#This file is for adding your own custom paths/aliases/variable
+# This file is for adding your own custom paths/aliases/variable
 # it will automatically be sourced when zsh starts
-# 
-# This is a zsh sourced file, so environment variables accept any zsh valid format
-
-# Uncomment the following line to disable bi-weekly auto-update checks for dotfiles
-# DISABLE_DOTFILES_AUTO_UPDATE="true"
- 
-# Uncomment the following line to change how often to auto-update the dotfiles (in days).
-# export UPDATE_DOTFILES_DAYS=13
 
 # set editor
 export EDITOR='nvim'
 alias vim='nvim'
-
-# enable gcc-8 toolchain for Centos Systems (maeve as example)
-# if [[ "$(uname -n)" == "maeve" ]]; then
-#     source /opt/rh/devtoolset-8/enable 
-# fi
-
-# set hdf5 library at another location (rocinante as example)
-# if [[ "$(uname -n)" == "rocinante" ]]; then
-#     export CPLUS_INCLUDE_PATH=${CPLUS_INCLUDE_PATH:+${CPLUS_INCLUDE_PATH}:}/usr/include/hdf5/serial
-# fi
 
 # add local bin to path
 export path=($path ${HOME}/.local/bin)
 
 # use color ls  
 # alias ls='ls --color=auto'
-# or
 # use lsd (ls with icons, written in rust)
-# export path=($path /opt/rust/cargo/bin)
 alias ls='lsd'
 
 # ignore afni warnings
@@ -38,15 +18,6 @@ export AFNI_NIFTI_TYPE_WARN=NO
 
 # kitty ssh
 alias ssh_kitty="kitty +kitten ssh"
-
-# freesurfer
-#export FREESURFER_HOME=/opt/freesurfer
-#export SUBJECTS_DIR=/home/vanandrew/Data/subjects_dir
-#source ${FREESURFER_HOME}/SetUpFreeSurfer.sh > /dev/null
-
-# fsl
-#export FSLDIR=/opt/fsl
-#source ${FSLDIR}/etc/fslconf/fsl.sh
 
 # STEAM
 export STEAM_COMPAT_CLIENT_INSTALL_PATH=~/.local/share/Steam
@@ -72,43 +43,4 @@ export path=($path /opt/Slicer)
 
 # add rust toolchain to path
 export path=($path ${HOME}/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin)
-
-# define wallpaper switching function
-set_wallpaper () {
-    wallpaper_path=$1
-    backend=$2
-    if [[ -d $wallpaper_path ]]; then
-        wallpaper_path=$(find $wallpaper_path/* | shuf -n 1)
-    fi
-    if [[ $backend == "" ]]; then
-        backend="wal"
-    fi
-    if [[ -f $wallpaper_path ]]; then
-        wallpaper=$(readlink -f $wallpaper_path)
-        if [[ $XDG_SESSION_DESKTOP == *"gnome"* ]]; then
-            gsettings set org.gnome.desktop.background picture-uri file://$wallpaper
-            current_wallpaper=$(gsettings get org.gnome.desktop.background picture-uri)
-            echo "Using Wallpaper: ${current_wallpaper}"
-            wal -i $wallpaper --backend $backend
-        fi
-        if [[ $XDG_SESSION_DESKTOP == "bspwm" ]]; then
-            ${HOME}/.config/polybar/material/scripts/pywal.sh $wallpaper $backend
-            feh --bg-fill $wallpaper
-        fi
-        if [[ $XDG_CURRENT_DESKTOP == "Hyprland" ]]; then
-            if [[ -f "${HOME}/.cache/current_wallpaper" ]]; then
-                current_wallpaper=$(cat ${HOME}/.cache/current_wallpaper)    
-            fi
-            [[ "${current_wallpaper}" == "$(realpath ${wallpaper})" ]] && echo "Specified wallpaper is already current." && return
-            wal -i $wallpaper --backend $backend > /dev/null
-            kitty +kitten themes --reload-in=all Default
-            hyprctl hyprpaper preload $(realpath $wallpaper) > /dev/null 
-            hyprctl hyprpaper wallpaper eDP-1,$(realpath $wallpaper) > /dev/null
-            [[ -f "${HOME}/.cache/current_wallpaper" ]] && hyprctl hyprpaper unload ${current_wallpaper} > /dev/null
-            echo $(realpath $wallpaper) > ${HOME}/.cache/current_wallpaper
-        fi
-    else
-        echo "Specify a wallpaper."
-    fi
-}
 
