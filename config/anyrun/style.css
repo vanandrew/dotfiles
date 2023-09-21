@@ -17,10 +17,12 @@ entry#entry {
 box#main {
   background-color: @background;
   border-radius: 20px;
+  opacity: 0.95;
 }
 
 list#main {
   background-color: rgba(0, 0, 0, 0);
+  border-radius: 20px;
 }
 
 list#plugin {
@@ -41,11 +43,11 @@ row#match label {
 
 label#match-title {
   font-size: 18px;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 label#match-desc {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 300;
 }
 
@@ -56,5 +58,6 @@ label#plugin {
 
 row#plugin:hover {
   background-color: @background;
+  border-radius: 20px;
 }
 
