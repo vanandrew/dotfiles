@@ -13,7 +13,6 @@ paths=(
   mpv
   ncmpcpp
   neofetch
-  nvim
   systemd
   waybar
 )
@@ -36,7 +35,7 @@ done
 
 # loop over files to sync
 for f in ${files[@]}; do
-  [ ! -f ~/.config/${f} ] && cp -v ${p} ~/.config/ && continue
+  [ ! -f ~/.config/${f} ] && cp -v ${f} ~/.config/ && continue
   rm -rf ${f}
   cp -rv ~/.config/${f} ./
 done

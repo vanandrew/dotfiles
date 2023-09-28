@@ -6,7 +6,7 @@
 }
 
 entry#entry {
-  font-size: 18;
+  font-size: 18px;
   color: @foreground;
   background-color: @background;
   border-color: rgba(0, 0, 0, 0);

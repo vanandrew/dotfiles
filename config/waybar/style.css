@@ -13,18 +13,18 @@ window#waybar {
 
 /*-----module groups----*/
 .modules-right {
-	background-color: @background;
-    margin-right: 5px;
-    margin-top: 5px;
+    background-color: @background;
+    margin-right: 20px;
+    margin-top: 10px;
 }
 .modules-left {
-	background-color: @background;
-    margin-left: 5px;
-    margin-top: 5px;
+    background-color: @background;
+    margin-left: 20px;
+    margin-top: 10px;
 }
 .modules-center {
-	background-color: transparent;
-    margin-top: 5px;
+    background-color: transparent;
+    margin-top: 10px;
 }
 
 /*-----modules indv----*/
@@ -59,6 +59,7 @@ window#waybar {
 }
 #network {
     margin: 5px 0px 5px 10px;
+    padding-right: 5px;
 }
 #battery {
     margin: 5px 0px 5px 5px;

@@ -15,13 +15,13 @@
         }
     },
     "backlight": {
-        "format-icons": ["", "", "", " ", " ", " ", " "],
+        "format-icons": ["󰃚 ", "󰃛", "󰃜", "󰃝 ", "󰃞 ", "󰃟 ", "󰃠 "],
         "format": "{icon}{percent}%"
     },
     "battery": {
         "bat": "BAT0",
         "format": "{capacity}% {icon}",
-        "format-Not charging": "{capacity}% ",
+        "format-Not charging": "{capacity}% 󱉞",
         "format-icons": ["", "", "", "", ""],
     },
     "mpd": {
