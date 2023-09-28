@@ -11,7 +11,6 @@ window#waybar {
     background: transparent;
 }
 
-/*-----module groups----*/
 .modules-right {
     background-color: @background;
     margin-right: 20px;
@@ -27,12 +26,11 @@ window#waybar {
     margin-top: 10px;
 }
 
-/*-----modules indv----*/
 #workspaces label {
-    font-size: 16px;
+    font-size: 20px;
     min-width: 15px;
-    padding-left: 8px;
-    padding-right: 8px;
+    padding-left: 11px;
+    padding-right: 11px;
     margin-left: 0px;
     margin-right: 0px;
 }
@@ -62,29 +60,29 @@ window#waybar {
     padding-right: 5px;
 }
 #battery {
-    margin: 5px 0px 5px 5px;
+    margin: 5px 5px 5px 5px;
     min-width: 60px;
 }
 #pulseaudio {
     margin: 5px 0px 5px 5px;
-    min-width: 60px;
+    min-width: 50px;
 }
 #backlight { 
-    margin: 5px 0px 5px 5px;
-    min-width: 60px;
+    margin: 5px 0px 5px 10px;
+    min-width: 50px;
 }
 #tray {
-    margin: 5px 5px 5px 10px;
+    margin: 5px 0px 5px 15px;
 }
 
 
 #mpd {
     margin: 5px;
-    padding: 0 10px 2px 0;
+    padding: 0 15px 2px 0;
 }
 #mpd.stopped {
     margin: 5px;
-    padding: 0 10px 0 0;
+    padding: 0 15px 0 0;
 }
 #keyboard-state {
     margin: 5px 5px 5px 0;
@@ -92,14 +90,13 @@ window#waybar {
 }
 #custom-silentmode {
     border-radius: 50px;
-    margin: 5px 5px 5px 10px;
+    margin: 5px 5px 5px 15px;
     min-width: 20px;
 }
 #custom-silentmode button:hover {
     background: @color1;
 }
 
-/*-----Indicators----*/
 #pulseaudio.muted {
     color: @color6;
 }

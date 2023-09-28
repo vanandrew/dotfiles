@@ -10,7 +10,7 @@ entry#entry {
   color: @foreground;
   background-color: @background;
   border-color: rgba(0, 0, 0, 0);
-  padding: 20px;
+  padding: 15px;
   border-radius: 20px;
 }
 
