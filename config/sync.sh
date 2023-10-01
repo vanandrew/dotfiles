@@ -13,6 +13,7 @@ paths=(
   mpv
   ncmpcpp
   neofetch
+  nvim
   systemd
   waybar
 )
