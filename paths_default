@@ -44,7 +44,7 @@ set_wallpaper () {
     wallpaper_path=$1
     backend=$2
     if [[ -d $wallpaper_path ]]; then
-        wallpaper_path=$(find $wallpaper_path/* | shuf -n 1)
+        wallpaper_path=$(find $wallpaper_path/* | shuf -n 1 | tr -d '\n')
     fi
     if [[ $backend == "" ]]; then
         backend="wal"
