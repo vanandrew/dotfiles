@@ -42,6 +42,9 @@ window#waybar {
     margin-right: 1px;
 }
 #workspaces button.persistent {
+    background: @color2;
+}
+#workspaces button.empty {
     background: @background;
 }
 #workspaces button.active {
