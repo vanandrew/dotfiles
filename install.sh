@@ -55,7 +55,7 @@ popd > /dev/null
 # clone plugins
 pushd ~/.oh-my-zsh/custom/plugins > /dev/null
 [ ! -d zsh-autocomplete ] && git clone https://github.com/marlonrichert/zsh-autocomplete.git
-cd zsh-autocomplete && git reset --hard && git checkout main && git pull && git checkout 23.07.13 && cd ..
+cd zsh-autocomplete && git reset --hard && git checkout main && git pull && git checkout 23.05.24 && cd ..
 [ ! -d F-Sy-H ] && git clone https://github.com/z-shell/F-Sy-H.git
 cd F-Sy-H && git reset --hard && git checkout main && git pull && git checkout v1.67 && cd ..
 popd > /dev/null
