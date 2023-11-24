@@ -16,7 +16,7 @@
     },
     "backlight": {
         "format-icons": ["󰃚 ", "󰃛", "󰃜", "󰃝 ", "󰃞 ", "󰃟 ", "󰃠 "],
-        "format": "{icon}{percent}%"
+        "format": "{icon} {percent}%"
     },
     "battery": {
         "bat": "BAT0",
@@ -77,12 +77,12 @@
          }
     },
     "pulseaudio": {
-        "format": "{icon} {volume}%",
-        "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": "󰖁 {icon} {format_source}",
+        "format": "{volume}% {icon} ",
+        "format-bluetooth": "{volume}% {icon}  {format_source}",
+        "format-bluetooth-muted": "󰖁 {icon}  {format_source}",
         "format-muted": "0% {icon} ",
-        "format-source": "{volume}% ",
-        "format-source-muted": "",
+        "format-source": "{volume}%  ",
+        "format-source-muted": " ",
         "format-icons": {
             "headphone": "",
             "hands-free": "",
