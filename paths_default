@@ -47,7 +47,7 @@ set_wallpaper () {
         wallpaper_path=$(find $wallpaper_path/* | shuf -n 1 | tr -d '\n')
     fi
     if [[ $backend == "" ]]; then
-        backend="wal"
+        backend="colorthief"
     fi
     if [[ -f $wallpaper_path ]]; then
         wallpaper=$(readlink -f $wallpaper_path)
@@ -56,18 +56,15 @@ set_wallpaper () {
             current_wallpaper=$(gsettings get org.gnome.desktop.background picture-uri)
             echo "Using Wallpaper: ${current_wallpaper}"
             wal -i $wallpaper --backend $backend
-        fi
-        if [[ $XDG_CURRENT_DESKTOP == "Hyprland" ]]; then
+        else
             if [[ -f "${HOME}/.cache/current_wallpaper" ]]; then
                 current_wallpaper=$(cat ${HOME}/.cache/current_wallpaper)    
             fi
             [[ "${current_wallpaper}" == "$(realpath ${wallpaper})" ]] && echo "Specified wallpaper is already current." && return
             wal -i $wallpaper --backend $backend > /dev/null
             kitty +kitten themes --reload-in=all Default
-            hyprctl hyprpaper preload $(realpath $wallpaper) > /dev/null 
             hyprctl hyprpaper wallpaper eDP-1,$(realpath $wallpaper) > /dev/null
-            [[ -f "${HOME}/.cache/current_wallpaper" ]] && hyprctl hyprpaper unload ${current_wallpaper} > /dev/null
-            echo $(realpath $wallpaper) > ${HOME}/.cache/current_wallpaper
+            hyprctl monitors | grep -q DP-2 && hyprctl hyprpaper wallpaper DP-2,$(realpath $wallpaper) > /dev/null
         fi
     else
         echo "Specify a wallpaper."
