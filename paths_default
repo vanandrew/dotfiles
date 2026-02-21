@@ -61,7 +61,8 @@ set_wallpaper () {
             kitty +kitten themes --reload-in=all Default
             hyprctl hyprpaper wallpaper eDP-1,$(realpath $wallpaper) > /dev/null 2>&1
             hyprctl monitors | grep -q DP-2 && hyprctl hyprpaper wallpaper DP-2,$(realpath $wallpaper) > /dev/null 2>&1
-        fi
+            clear
+	fi
     else
         echo "Specify a wallpaper."
     fi
