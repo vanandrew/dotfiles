@@ -1,4 +1,4 @@
-@import url("file:///home/vanandrew/.cache/wal/colors-waybar.css");
+@import url("file:///home/vanandrew/.config/waybar/colors.css");
 
 window {
   caret-color: @foreground;
