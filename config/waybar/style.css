@@ -38,8 +38,8 @@ window#waybar {
     background: @color3;
     padding-left: 0px;
     padding-right: 0px;
-    margin-left: 1px;
-    margin-right: 1px;
+    margin-left: 2px;
+    margin-right: 2px;
 }
 #workspaces button.persistent {
     background: @color2;
@@ -53,6 +53,7 @@ window#waybar {
 #workspaces button:hover {
     background: @color1;
 }
+
 #clock {
     border-radius: 50px;
     margin: 5px 10px 5px 5px;
@@ -81,7 +82,7 @@ window#waybar {
 
 #mpd {
     margin: 5px;
-    padding: 0 15px 2px 0;
+    padding: 0 15px 0 0;
 }
 #mpd.stopped {
     margin: 5px;

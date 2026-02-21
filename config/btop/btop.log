@@ -11,3 +11,9 @@ btop++ needs an interactive shell to run.
 2022/12/13 (18:14:22) | ERROR: Stall in Runner thread, restarting!
 2022/12/13 (18:14:55) | ERROR: Stall in Runner thread, restarting!
 2022/12/13 (18:15:28) | ERROR: Stall in Runner thread, restarting!
+
+2024/11/28 (17:39:46) | ===> btop++ v.1.4.0
+2024/11/28 (17:39:46) | WARNING: Intel GPU: Failed to initialize PMU
+
+2024/12/17 (00:34:41) | ===> btop++ v.1.4.0
+2024/12/17 (00:34:41) | WARNING: Intel GPU: Failed to initialize PMU

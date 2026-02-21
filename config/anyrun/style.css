@@ -1,11 +1,11 @@
-@import "/home/vanandrew/.cache/wal/colors-waybar.css";
+@import url("file:///home/vanandrew/.cache/wal/colors-waybar.css");
 
-#window {
+window {
   caret-color: @foreground;
   background-color: rgba(0, 0, 0, 0);
 }
 
-entry#entry {
+text {
   font-size: 18px;
   color: @foreground;
   background-color: @background;
@@ -14,50 +14,51 @@ entry#entry {
   border-radius: 20px;
 }
 
-box#main {
+.main {
   background-color: @background;
   border-radius: 20px;
   opacity: 0.95;
 }
 
-list#main {
+.matches {
   background-color: rgba(0, 0, 0, 0);
   border-radius: 20px;
 }
 
-list#plugin {
+.plugin {
   background-color: rgba(0, 0, 0, 0);
 }
 
-row#match:selected label {
+.match:selected .title,
+.match:selected .description {
   color: @background;
 }
 
-row#match:selected {
+.match:selected {
   background-color: @foreground;
 }
 
-row#match label {
+.match .title,
+.match .description {
   color: @foreground;
 }
 
-label#match-title {
+.title {
   font-size: 18px;
   font-weight: 400;
 }
 
-label#match-desc {
+.description {
   font-size: 14px;
   font-weight: 300;
 }
 
-label#plugin {
+.info label {
   font-size: 18px;
   color: @foreground;
 }
 
-row#plugin:hover {
+.plugin:hover {
   background-color: @background;
   border-radius: 20px;
 }
-
