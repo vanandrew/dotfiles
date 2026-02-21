@@ -13,9 +13,9 @@ paths=(
   mpv
   ncmpcpp
   neofetch
-  nvim
   systemd
   waybar
+  wallust
 )
 
 files=(

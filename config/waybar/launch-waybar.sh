@@ -1,6 +1,6 @@
 #!/bin/bash
 
-CONFIG_FILES="$HOME/.config/waybar/config $HOME/.config/waybar/style.css $HOME/.cache/wal/colors-waybar.css"
+CONFIG_FILES="$HOME/.config/waybar/config $HOME/.config/waybar/style.css $HOME/.config/waybar/colors.css"
 trap "killall waybar" EXIT
 waybar &
 while true; do
